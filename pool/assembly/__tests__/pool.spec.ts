@@ -14,8 +14,12 @@ describe('pool', () => {
   it('should deposit koin', () => {
     const poolContract = new Pool();
 
-    // mock a successful token transfer result
-    MockVM.setCallContractResults([new system_calls.exit_arguments(1)]);
+    MockVM.setCallContractResults([
+      // mock a successful token transfer result
+      new system_calls.exit_arguments(0, new chain.result()),
+      new system_calls.exit_arguments(0, new chain.result(Protobuf.encode(new token.balance_of_result(10), token.balance_of_result.encode))),
+      new system_calls.exit_arguments(0, new chain.result(Protobuf.encode(new token.balance_of_result(0), token.balance_of_result.encode))),
+    ]);
 
     // call the deposit function
     const depositArgs = new pool.deposit_koin_arguments(MOCK_ACCT1, 10);
