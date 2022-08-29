@@ -1,4 +1,4 @@
-import { Protobuf, SafeMath, System, Token } from "@koinos/sdk-as";
+import { pob, Protobuf, SafeMath, System, Token } from "@koinos/sdk-as";
 import { pool } from "./proto/pool";
 import { State } from "./State";
 import { Constants } from "./Constants";
@@ -167,4 +167,28 @@ export class Pool {
     this._state.SaveSupply(supply);
     this._state.SaveBasis(basis);
   }
+
+  reburn(args: pool.reburn_arguments): pool.reburn_result {
+    const res = new pool.reburn_result(false);
+
+    const totalStaked = SafeMath.add(this._koin.balanceOf(Constants.ContractId()), this._vhp.balanceOf(Constants.ContractId()));
+    const basis = this._state.GetBasis();
+    const operatorShareOfProfit = SafeMath.div(SafeMath.sub(totalStaked, basis.value), Constants.OperatorFee());
+
+    System.require(this._koin.transfer(Constants.ContractId(), Constants.OperatorWallet(), operatorShareOfProfit), "Failed to transfer operator share of profit");
+
+    basis.value = SafeMath.sub(totalStaked, operatorShareOfProfit);
+    this._state.SaveBasis(basis);
+
+    const availableMana = System.getAccountRC(Constants.ContractId());
+    const koinToBurn = SafeMath.sub(availableMana, Constants.BurnBuffer());
+    const pobArgs = new pob.burn_arguments(koinToBurn, Constants.ContractId(), Constants.ContractId());
+
+    const callRes = System.call(Constants.PobContractId(), Constants.PobBurnEntryPoint(), Protobuf.encode(pobArgs, pob.burn_arguments.encode));
+    System.require(callRes.code == 0, "failed to burn tokens");
+
+    res.value = true;
+
+    return res;
+  } 
 }

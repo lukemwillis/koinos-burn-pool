@@ -99,6 +99,16 @@ message withdraw_vhp_result {
    bool value = 1;
 }
 
+/*
+   @description Burn koin held by contract for VHP, distribute profit share to operator
+   @read-only false
+*/
+message reburn_arguments {}
+
+message reburn_result {
+   bool value = 1;
+}
+
 // State objects
 message balance_object {
    uint64 value = 1 [jstype = JS_STRING];

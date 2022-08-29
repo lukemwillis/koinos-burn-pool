@@ -1,6 +1,23 @@
 import { System } from "@koinos/sdk-as";
 
 export class Constants {
+  static BurnBuffer(): u64 {
+    return 1000000000; // 10 Koin
+  }
+
+  static OperatorFee(): u64 {
+    return 20; // 1/20 = 5%
+  }
+  
+  static OperatorWallet(): Uint8Array {
+    // Address: 1DfotF65NdVdLfNzrrhexzS7oFmJuXvLsT
+    return arrayToUint8Array([
+      0x00, 0x8a, 0xf8, 0x73, 0xcb, 0xad, 0x61, 0x21, 0x64, 0x79, 0x60, 0x53, 
+      0x8a, 0x4b, 0xa5, 0x5f, 0x06, 0x97, 0xcf, 0x1c, 0x0e, 0x71, 0x59, 0x7e,
+      0x02
+    ]);
+  }
+
   static ContractId(): Uint8Array {
     return System.getContractId();
   }
@@ -39,6 +56,19 @@ export class Constants {
         0x09,
       ]);
     }
+  }
+
+  static PobContractId(): Uint8Array {
+    // Address: 198RuEouhgiiaQm7uGfaXS6jqZr6g6nyoR
+    return arrayToUint8Array([
+      0x00, 0x59, 0x28, 0xb4, 0x3a, 0xec, 0x3d, 0x42, 0x15, 0x6d, 0x46, 0x31,
+      0xaf, 0xcd, 0xf6, 0x11, 0xe8, 0x3f, 0x74, 0x9d, 0x18, 0x5e, 0x0a, 0x11,
+      0xdc
+    ]);
+  }
+
+  static PobBurnEntryPoint(): u32 {
+    return 0x859facc5;
   }
 }
 
