@@ -17,41 +17,110 @@ message balance_of_result {
 }
 
 /*
-   @description Stake token
+   @description Get internal unscaled staking balance
+   @read-only true
+*/
+message balance_of_unscaled_arguments {
+   bytes account = 1 [(koinos.btype) = ADDRESS];
+}
+
+message balance_of_unscaled_result {
+   uint64 value = 1 [jstype = JS_STRING];
+}
+
+/*
+   @description Get internal basis
+   @read-only true
+*/
+message basis_arguments {}
+
+message basis_result {
+   uint64 value = 1 [jstype = JS_STRING];
+}
+/*
+   @description Get internal supply
+   @read-only true
+*/
+message supply_arguments {}
+
+message supply_result {
+   uint64 value = 1 [jstype = JS_STRING];
+}
+
+/*
+   @description Deposit koin
    @read-only false
 */
-message stake_arguments {
+message deposit_koin_arguments {
    bytes account = 1 [(koinos.btype) = ADDRESS];
    uint64 value  = 2 [jstype = JS_STRING];
 }
 
-message stake_result {
+message deposit_koin_result {
    bool value = 1;
 }
 
 /*
-   @description Withdraw staked token
+   @description Deposit vhp
    @read-only false
 */
-message withdraw_arguments {
+message deposit_vhp_arguments {
    bytes account = 1 [(koinos.btype) = ADDRESS];
    uint64 value  = 2 [jstype = JS_STRING];
 }
 
-message withdraw_result {
+message deposit_vhp_result {
    bool value = 1;
 }
 
+/*
+   @description Withdraw koin
+   @read-only false
+*/
+message withdraw_koin_arguments {
+   bytes account = 1 [(koinos.btype) = ADDRESS];
+   uint64 value  = 2 [jstype = JS_STRING];
+}
+
+message withdraw_koin_result {
+   bool value = 1;
+}
+
+/*
+   @description Withdraw vhp
+   @read-only false
+*/
+message withdraw_vhp_arguments {
+   bytes account = 1 [(koinos.btype) = ADDRESS];
+   uint64 value  = 2 [jstype = JS_STRING];
+}
+
+message withdraw_vhp_result {
+   bool value = 1;
+}
+
+// State objects
 message balance_object {
    uint64 value = 1 [jstype = JS_STRING];
 }
 
-message stake_event {
+// Events
+message deposit_koin_event {
    bytes account = 1 [(koinos.btype) = ADDRESS];
    uint64 value = 2 [jstype = JS_STRING];
 }
 
-message withdraw_event {
+message deposit_vhp_event {
+   bytes account = 1 [(koinos.btype) = ADDRESS];
+   uint64 value = 2 [jstype = JS_STRING];
+}
+
+message withdraw_koin_event {
+   bytes account = 1 [(koinos.btype) = ADDRESS];
+   uint64 value = 2 [jstype = JS_STRING];
+}
+
+message withdraw_vhp_event {
    bytes account = 1 [(koinos.btype) = ADDRESS];
    uint64 value = 2 [jstype = JS_STRING];
 }

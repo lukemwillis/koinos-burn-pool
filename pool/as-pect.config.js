@@ -18,6 +18,7 @@ module.exports = {
     // "--textFile": ["output.wat"],
     /** A runtime must be provided here. */
     "--runtime": ["incremental"], // Acceptable values are: "incremental", "minimal", and "stub"
+    "-u":"BUILD_FOR_TESTING=1",
   },
   /**
    * A set of regexp that will disclude source files from testing.
