@@ -200,9 +200,15 @@ export class Pool {
     const supply = this._state.GetSupply();
     const basis = this._state.GetBasis();
 
-    const scaledValue = SafeMath.div<u128>(
-      SafeMath.mul<u128>(u128.fromU64(value), u128.fromU64(supply.value || 1)),
-      u128.fromU64(basis.value || 1)
+    const scaledValue = SafeMath.add<u128>(
+      SafeMath.div<u128>(
+        SafeMath.mul<u128>(
+          u128.fromU64(value),
+          u128.fromU64(supply.value || 1)
+        ),
+        u128.fromU64(basis.value || 1)
+      ),
+      u128.One // prevent infinite 1 satoshi withdrawals
     ).toU64();
 
     System.require(
@@ -251,13 +257,13 @@ export class Pool {
     );
 
     const koinToBurn = SafeMath.sub(availableMana, Constants.BurnBuffer());
-    // TODO this call fails with error "Could not burn KOIN"
     const pobArgs = new pob.burn_arguments(
       koinToBurn,
       Constants.ContractId(),
       Constants.ContractId()
     );
-
+    
+    // TODO this call fails with error "Could not burn KOIN"
     const callRes = System.call(
       Constants.PobContractId(),
       Constants.PobBurnEntryPoint(),
