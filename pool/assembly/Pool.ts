@@ -146,10 +146,12 @@ export class Pool {
 
     const res = new pool.withdraw_koin_result(false);
 
+    const availableMana = System.getAccountRC(Constants.ContractId());
     System.require(
-      this._koin.transfer(Constants.ContractId(), account, value),
+      availableMana - value >= Constants.KoinBuffer(),
       "Contract had insufficient funds for withdrawal. Try withdrawing VHP instead."
     );
+    this._koin.transfer(Constants.ContractId(), account, value);
 
     this.withdraw_helper(account, value);
 
@@ -252,17 +254,17 @@ export class Pool {
 
     const availableMana = System.getAccountRC(Constants.ContractId());
     System.require(
-      availableMana >= Constants.BurnBuffer(),
+      availableMana >= Constants.KoinBuffer(),
       "Not enough liquid KOIN in contract to burn"
     );
 
-    const koinToBurn = SafeMath.sub(availableMana, Constants.BurnBuffer());
+    const koinToBurn = SafeMath.sub(availableMana, Constants.KoinBuffer());
     const pobArgs = new pob.burn_arguments(
       koinToBurn,
       Constants.ContractId(),
       Constants.ContractId()
     );
-    
+
     // TODO this call fails with error "Could not burn KOIN"
     const callRes = System.call(
       Constants.PobContractId(),

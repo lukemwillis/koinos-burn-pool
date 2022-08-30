@@ -1,7 +1,7 @@
 import { System } from "@koinos/sdk-as";
 
 export class Constants {
-  static BurnBuffer(): u64 {
+  static KoinBuffer(): u64 { // amount to disallow withdrawal or burning
     return 1000000000; // 10 Koin
   }
 
