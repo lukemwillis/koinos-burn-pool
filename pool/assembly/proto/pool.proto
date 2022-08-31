@@ -17,33 +17,12 @@ message balance_of_result {
 }
 
 /*
-   @description Get internal unscaled staking balance
-   @read-only true
-*/
-message balance_of_unscaled_arguments {
-   bytes account = 1 [(koinos.btype) = ADDRESS];
-}
-
-message balance_of_unscaled_result {
-   uint64 value = 1 [jstype = JS_STRING];
-}
-
-/*
    @description Get internal basis
    @read-only true
 */
 message basis_arguments {}
 
 message basis_result {
-   uint64 value = 1 [jstype = JS_STRING];
-}
-/*
-   @description Get internal supply
-   @read-only true
-*/
-message supply_arguments {}
-
-message supply_result {
    uint64 value = 1 [jstype = JS_STRING];
 }
 

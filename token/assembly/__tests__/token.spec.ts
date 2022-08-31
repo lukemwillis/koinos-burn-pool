@@ -3,8 +3,6 @@ import { Token } from "../Token";
 import { token } from "../proto/token";
 
 const CONTRACT_ID = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqe");
-const MOCK_ACCT1 = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqG");
-const MOCK_ACCT2 = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqK");
 
 describe("token", () => {
   beforeEach(() => {
@@ -13,28 +11,28 @@ describe("token", () => {
   });
 
   it("should get the name", () => {
-    const tkn = new Token();
+    const contract = new Token();
 
     const args = new token.name_arguments();
-    const res = tkn.name(args);
+    const res = contract.name(args);
 
     expect(res.value).toBe("Pooled VHP");
   });
 
   it("should get the symbol", () => {
-    const tkn = new Token();
+    const contract = new Token();
 
     const args = new token.symbol_arguments();
-    const res = tkn.symbol(args);
+    const res = contract.symbol(args);
 
     expect(res.value).toBe("PVHP");
   });
 
   it("should get the decimals", () => {
-    const tkn = new Token();
+    const contract = new Token();
 
     const args = new token.decimals_arguments();
-    const res = tkn.decimals(args);
+    const res = contract.decimals(args);
 
     expect(res.value).toBe(8);
   });

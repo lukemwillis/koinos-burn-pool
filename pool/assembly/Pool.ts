@@ -12,8 +12,10 @@ export class Pool {
   }
 
   balance_of(args: pool.balance_of_arguments): pool.balance_of_result {
-    const balance = this._state.GetBalance(args.account!).value; // internal tracked value, not 1:1 with KOIN/VHP held by contract
-    const supply = this._state.GetSupply().value; // total of all internal tracked balances
+    const token = new Token(Constants.PoolTokenContractId());
+
+    const balance = token.balanceOf(args.account!); // not 1:1 with KOIN/VHP held by contract
+    const supply = token.totalSupply();
     const basis = this._state.GetBasis().value; // total KOIN/VHP held by contract not including recent profit
 
     // balance * basis / supply = your share of the KOIN/VHP held by contract
@@ -25,17 +27,8 @@ export class Pool {
     );
   }
 
-  balance_of_unscaled(args: pool.balance_of_unscaled_arguments): pool.balance_of_unscaled_result {
-    // just the internal tracked value, not scaled for your share of KOIN/VHP
-    return new pool.balance_of_unscaled_result(this._state.GetBalance(args.account!).value);
-  }
-
   basis(_: pool.basis_arguments): pool.basis_result {
     return new pool.basis_result(this._state.GetBasis().value);
-  }
-
-  supply(_: pool.supply_arguments): pool.supply_result {
-    return new pool.supply_result(this._state.GetSupply().value);
   }
 
   deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {
@@ -83,11 +76,11 @@ export class Pool {
   }
 
   deposit_helper(account: Uint8Array, value: u64): void {
+    const token = new Token(Constants.PoolTokenContractId());
     const koin = new Token(Constants.KoinContractId());
     const vhp = new Token(Constants.VhpContractId());
 
-    const accountBalance = this._state.GetBalance(account);
-    const supply = this._state.GetSupply();
+    const supply = token.totalSupply();
     const basis = this._state.GetBasis();
     const totalStaked = SafeMath.add(
       koin.balanceOf(Constants.ContractId()),
@@ -98,20 +91,13 @@ export class Pool {
     // since value is in KOIN/VHP, we have to scale it based on the ratio of all internal balances to KOIN/VHP in the contract
     // we use totalStaked instead of basis because your new deposit isn't entitled to existing profits
     const scaledValue = SafeMath.div<u128>(
-      SafeMath.mul<u128>(u128.fromU64(value), u128.fromU64(supply.value || 1)),
+      SafeMath.mul<u128>(u128.fromU64(value), u128.fromU64(supply || 1)),
       u128.fromU64(totalStaked || 1)
     ).toU64();
+    System.require(token.mint(account, scaledValue), 'Failed to mint tokens for tracking balance.');
 
-    accountBalance.value = SafeMath.add(
-      accountBalance.value as u64,
-      scaledValue
-    );
-    supply.value = SafeMath.add(supply.value, scaledValue);
     // increase basis so your new deposit isn't counted as profits
     basis.value = SafeMath.add(basis.value, value);
-
-    this._state.SaveBalance(account, accountBalance);
-    this._state.SaveSupply(supply);
     this._state.SaveBasis(basis);
   }
 
@@ -166,8 +152,9 @@ export class Pool {
   }
 
   withdraw_helper(account: Uint8Array, value: u64): void {
-    const accountBalance = this._state.GetBalance(account);
-    const supply = this._state.GetSupply();
+    const token = new Token(Constants.PoolTokenContractId());
+
+    const supply = token.totalSupply();
     const basis = this._state.GetBasis();
 
     // value * supply / basis + 1 = your share of internal supply
@@ -177,7 +164,7 @@ export class Pool {
       SafeMath.div<u128>(
         SafeMath.mul<u128>(
           u128.fromU64(value),
-          u128.fromU64(supply.value || 1)
+          u128.fromU64(supply || 1)
         ),
         u128.fromU64(basis.value || 1)
       ),
@@ -185,16 +172,11 @@ export class Pool {
     ).toU64();
 
     System.require(
-      accountBalance.value >= scaledValue,
+      token.burn(account, scaledValue),
       "Account has insufficient balance. Please withdraw a smaller amount."
     );
 
-    accountBalance.value = SafeMath.sub(accountBalance.value, scaledValue);
-    supply.value = SafeMath.sub(supply.value, scaledValue);
     basis.value = SafeMath.sub(basis.value, value);
-
-    this._state.SaveBalance(account, accountBalance);
-    this._state.SaveSupply(supply);
     this._state.SaveBasis(basis);
   }
 
