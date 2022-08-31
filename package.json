@@ -16,7 +16,11 @@
   },
   "scripts": {
     "lint": "eslint --max-warnings 0 --ext ts \"*/assembly/**/*.ts\"",
-    "build:release": "cd pool && yarn install && yarn build:release && yarn test",
-    "build:debug": "cd pool && yarn install && yarn build:debug && yarn test"
+    "buildPool:release": "cd pool && yarn install && yarn build:release && yarn test",
+    "buildPool:debug": "cd pool && yarn install && yarn build:debug && yarn test",
+    "buildToken:release": "cd token && yarn install && yarn build:release && yarn test",
+    "buildToken:debug": "cd token && yarn install && yarn build:debug && yarn test",
+    "buildAll:release": "yarn buildPool:release && yarn buildToken:release",
+    "buildAll:debug": "yarn buildPool:debug && yarn buildToken:debug"
   }
 }

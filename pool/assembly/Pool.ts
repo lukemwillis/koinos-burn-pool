@@ -11,111 +11,80 @@ export class Pool {
     this._state = new State();
   }
 
-  balance_of(args: pool.balance_of_arguments): pool.balance_of_result {
-    const account = args.account as Uint8Array;
-
-    const balance = this._state.GetBalance(account).value; // internal tracked value, not 1:1 with KOIN/VHP held by contract
+  balance_of({ account }: pool.balance_of_arguments): pool.balance_of_result {
+    const balance = this._state.GetBalance(account!).value; // internal tracked value, not 1:1 with KOIN/VHP held by contract
     const supply = this._state.GetSupply().value; // total of all internal tracked balances
     const basis = this._state.GetBasis().value; // total KOIN/VHP held by contract not including recent profit
 
-    const res = new pool.balance_of_result();
     // balance * basis / supply = your share of the KOIN/VHP held by contract
-    res.value = SafeMath.div<u128>(
-      SafeMath.mul<u128>(u128.fromU64(balance), u128.fromU64(basis || 1)),
-      u128.fromU64(supply || 1)
-    ).toU64();
-
-    return res;
+    return new pool.balance_of_result(
+      SafeMath.div<u128>(
+        SafeMath.mul<u128>(u128.fromU64(balance), u128.fromU64(basis || 1)),
+        u128.fromU64(supply || 1)
+      ).toU64()
+    );
   }
 
-  balance_of_unscaled(
-    args: pool.balance_of_unscaled_arguments
-  ): pool.balance_of_unscaled_result {
-    const account = args.account as Uint8Array;
-
+  balance_of_unscaled = ({
+    account,
+  }: pool.balance_of_unscaled_arguments): pool.balance_of_unscaled_result =>
     // just the internal tracked value, not scaled for your share of KOIN/VHP
-    const balance = this._state.GetBalance(account).value;
+    new pool.balance_of_unscaled_result(this._state.GetBalance(account!).value);
 
-    const res = new pool.balance_of_unscaled_result();
-    res.value = balance;
+  basis = (_: pool.basis_arguments): pool.basis_result =>
+    new pool.basis_result(this._state.GetBasis().value);
 
-    return res;
-  }
+  supply = (_: pool.supply_arguments): pool.supply_result =>
+    new pool.supply_result(this._state.GetSupply().value);
 
-  basis(args: pool.basis_arguments): pool.basis_result {
-    const basis = this._state.GetBasis().value;
-
-    const res = new pool.basis_result();
-    res.value = basis;
-
-    return res;
-  }
-
-  supply(args: pool.supply_arguments): pool.supply_result {
-    const supply = this._state.GetSupply().value;
-
-    const res = new pool.supply_result();
-    res.value = supply;
-
-    return res;
-  }
-
-  deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {
-    const account = args.account as Uint8Array;
-    const value = args.value;
-
+  deposit_koin({
+    account,
+    value,
+  }: pool.deposit_koin_arguments): pool.deposit_koin_result {
     const koin = new Token(Constants.KoinContractId());
 
-    const res = new pool.deposit_koin_result(false);
-
     System.require(
-      koin.transfer(account, Constants.ContractId(), value),
+      koin.transfer(account!, Constants.ContractId(), value),
       "KOIN transfer from account failed. Please ensure you are authorized to transfer from this address and that your balance is sufficient."
     );
 
-    this.deposit_helper(account, value);
-
-    const depositEvent = new pool.deposit_koin_event(account, value);
-    const impacted = [account];
+    this.deposit_helper(account!, value);
 
     System.event(
       "pool.deposit_koin",
-      Protobuf.encode(depositEvent, pool.deposit_koin_event.encode),
-      impacted
+      Protobuf.encode(
+        new pool.deposit_koin_event(account, value),
+        pool.deposit_koin_event.encode
+      ),
+      [account!]
     );
 
-    res.value = true;
-
-    return res;
+    return new pool.deposit_koin_result(true);
   }
 
-  deposit_vhp(args: pool.deposit_vhp_arguments): pool.deposit_vhp_result {
-    const account = args.account as Uint8Array;
-    const value = args.value;
-    
+  deposit_vhp({
+    account,
+    value,
+  }: pool.deposit_vhp_arguments): pool.deposit_vhp_result {
     const vhp = new Token(Constants.VhpContractId());
 
-    const res = new pool.deposit_vhp_result(false);
-
     System.require(
-      vhp.transfer(account, Constants.ContractId(), value),
+      vhp.transfer(account!, Constants.ContractId(), value),
       "VHP transfer from account failed. Please ensure you are authorized to transfer from this address and that your balance is sufficient."
     );
 
-    this.deposit_helper(account, value);
-
-    const depositEvent = new pool.deposit_vhp_event(account, value);
-    const impacted = [account];
+    this.deposit_helper(account!, value);
 
     System.event(
       "pool.deposit_vhp",
-      Protobuf.encode(depositEvent, pool.deposit_vhp_event.encode),
-      impacted
+      Protobuf.encode(
+        new pool.deposit_vhp_event(account, value),
+        pool.deposit_vhp_event.encode
+      ),
+      [account!]
     );
 
-    res.value = true;
-
-    return res;
+    return new pool.deposit_vhp_result(true);
   }
 
   deposit_helper(account: Uint8Array, value: u64): void {
@@ -151,13 +120,11 @@ export class Pool {
     this._state.SaveBasis(basis);
   }
 
-  withdraw_koin(args: pool.withdraw_koin_arguments): pool.withdraw_koin_result {
-    const account = args.account as Uint8Array;
-    const value = args.value;
-
+  withdraw_koin({
+    account,
+    value,
+  }: pool.withdraw_koin_arguments): pool.withdraw_koin_result {
     const koin = new Token(Constants.KoinContractId());
-
-    const res = new pool.withdraw_koin_result(false);
 
     // availableMana represents how much liquid KOIN is in the contract.
     const availableMana = System.getAccountRC(Constants.ContractId());
@@ -167,52 +134,46 @@ export class Pool {
       availableMana - value >= Constants.KoinBuffer(),
       "Contract had insufficient funds for withdrawal. Try withdrawing VHP instead."
     );
-    koin.transfer(Constants.ContractId(), account, value);
+    koin.transfer(Constants.ContractId(), account!, value);
 
-    this.withdraw_helper(account, value);
-
-    const withdrawEvent = new pool.withdraw_koin_event(account, value);
-    const impacted = [account];
+    this.withdraw_helper(account!, value);
 
     System.event(
       "pool.withdraw_koin",
-      Protobuf.encode(withdrawEvent, pool.withdraw_koin_event.encode),
-      impacted
+      Protobuf.encode(
+        new pool.withdraw_koin_event(account, value),
+        pool.withdraw_koin_event.encode
+      ),
+      [account!]
     );
 
-    res.value = true;
-
-    return res;
+    return new pool.withdraw_koin_result(true);
   }
 
-  withdraw_vhp(args: pool.withdraw_vhp_arguments): pool.withdraw_vhp_result {
-    const account = args.account as Uint8Array;
-    const value = args.value;
-
+  withdraw_vhp({
+    account,
+    value,
+  }: pool.withdraw_vhp_arguments): pool.withdraw_vhp_result {
     const vhp = new Token(Constants.VhpContractId());
-
-    const res = new pool.withdraw_vhp_result(false);
 
     // TODO this call fails due to an authority issue in the VHP contract
     System.require(
-      vhp.transfer(Constants.ContractId(), account, value),
+      vhp.transfer(Constants.ContractId(), account!, value),
       "Contract had insufficient funds for withdrawal. Try withdrawing KOIN instead."
     );
 
-    this.withdraw_helper(account, value);
-
-    const withdrawEvent = new pool.withdraw_vhp_event(account, value);
-    const impacted = [account];
+    this.withdraw_helper(account!, value);
 
     System.event(
       "pool.withdraw_vhp",
-      Protobuf.encode(withdrawEvent, pool.withdraw_vhp_event.encode),
-      impacted
+      Protobuf.encode(
+        new pool.withdraw_vhp_event(account, value),
+        pool.withdraw_vhp_event.encode
+      ),
+      [account!]
     );
 
-    res.value = true;
-
-    return res;
+    return new pool.withdraw_vhp_result(true);
   }
 
   withdraw_helper(account: Uint8Array, value: u64): void {
@@ -248,11 +209,9 @@ export class Pool {
     this._state.SaveBasis(basis);
   }
 
-  reburn(args: pool.reburn_arguments): pool.reburn_result {
+  reburn(_: pool.reburn_arguments): pool.reburn_result {
     const koin = new Token(Constants.KoinContractId());
     const vhp = new Token(Constants.VhpContractId());
-
-    const res = new pool.reburn_result(false);
 
     const basis = this._state.GetBasis();
     const totalStaked = SafeMath.add(
@@ -307,8 +266,6 @@ export class Pool {
     );
     System.require(callRes.code == 0, "failed to burn tokens");
 
-    res.value = true;
-
-    return res;
+    return new pool.reburn_result(true);
   }
 }
