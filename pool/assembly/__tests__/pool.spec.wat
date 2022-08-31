@@ -122,7 +122,7 @@
  (data (i32.const 9068) ",\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\1c\00\00\00A\00r\00r\00a\00y\00 \00i\00s\00 \00e\00m\00p\00t\00y\00")
  (data (i32.const 9116) "\\\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00J\00\00\00~\00l\00i\00b\00/\00a\00s\00-\00p\00r\00o\00t\00o\00/\00i\00n\00t\00e\00r\00n\00a\00l\00/\00F\00i\00x\00e\00d\00R\00e\00a\00d\00e\00r\00.\00t\00s\00\00\00")
  (data (i32.const 9212) "<\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00$\00\00\00I\00n\00v\00a\00l\00i\00d\00 \00w\00i\00r\00e\00 \00t\00y\00p\00e\00 \00\00\00\00\00\00\00\00\00")
- (data (i32.const 9280) "C\00\00\00 \00\00\00\00\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\04\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\04\00\00\00\02\01\00\00\00\00\00\00\02\t\00\00\00\00\00\00A\00\00\00\02\00\00\00\00\00\00\00\n\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\01\01\00\00\02\00\00\00B\00\00\00\00\00\00\00d\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00 \00\00\00\00\00\00\00\04A\00\00\00\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00 \00\00\00\00\00\00\00\10\t\02\00\00\00\00\00\00\00\00\00\00\00\00\00 \00\00\00\00\00\00\00")
+ (data (i32.const 9280) "C\00\00\00 \00\00\00\00\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\04\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\04\00\00\00\02\01\00\00\00\00\00\00\02\t\00\00\00\00\00\00A\00\00\00\02\00\00\00\00\00\00\00\n\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\01\01\00\00\02\00\00\00B\00\00\00\00\00\00\00d\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00 \00\00\00\00\00\00\00\04A\00\00\00\00\00\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00 \00\00\00\00\00\00\00\10\t\02\00\00\00\00\00\00\00\00\00\00\00\00\00 \00\00\00\00\00\00\00")
  (import "__asCovers" "coverDeclare" (func $~lib/index/__coverDeclare (param i32 i32 i32 i32 i32)))
  (import "wasi_snapshot_preview1" "fd_write" (func $~lib/bindings/wasi_snapshot_preview1/fd_write (param i32 i32 i32 i32) (result i32)))
  (import "wasi_snapshot_preview1" "proc_exit" (func $~lib/bindings/wasi_snapshot_preview1/proc_exit (param i32)))
@@ -9659,7 +9659,7 @@
                         i32.const 8
                         i32.sub
                         i32.load
-                        br_table $~lib/arraybuffer/ArrayBuffer $~lib/string/String $folding-inner4 $folding-inner5 $~lib/as-proto/Writer/Writer $~lib/as-proto/internal/FixedSizer/FixedSizer $folding-inner4 $folding-inner4 $folding-inner4 $folding-inner12 $~lib/as-proto/Reader/Reader $folding-inner0 $folding-inner4 $folding-inner4 $~lib/staticarray/StaticArray<u8> $folding-inner0 $folding-inner1 $folding-inner4 $folding-inner0 $folding-inner2 $folding-inner0 $folding-inner0 $folding-inner4 $folding-inner2 $folding-inner0 $folding-inner4 $folding-inner0 $folding-inner3 $folding-inner0 $folding-inner4 $~lib/@koinos/proto-as/koinos/chain/value/value.value_type $folding-inner1 $folding-inner3 $folding-inner0 $folding-inner4 $folding-inner4 $folding-inner1 $folding-inner0 $folding-inner0 $folding-inner5 $folding-inner0 $folding-inner0 $folding-inner4 $folding-inner0 $folding-inner0 $folding-inner1 $folding-inner0 $folding-inner4 $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.database_object $folding-inner0 $folding-inner4 $folding-inner0 $folding-inner0 $~lib/@koinos/sdk-as/util/safeMath/SafeMath.SafeInteger<u64> $~lib/staticarray/StaticArray<~lib/string/String> $~lib/as-bignum/integer/u128/u128 $folding-inner4 $folding-inner0 $folding-inner4 $folding-inner3 $folding-inner0 $folding-inner2 $folding-inner0 $node_modules/@as-pect/assembly/assembly/internal/Expectation/Expectation<bool> $~lib/map/Map<usize,i32> $folding-inner4 $node_modules/@as-pect/assembly/assembly/internal/Expectation/Expectation<u64> $invalid
+                        br_table $~lib/arraybuffer/ArrayBuffer $~lib/string/String $folding-inner4 $folding-inner5 $~lib/as-proto/Writer/Writer $~lib/as-proto/internal/FixedSizer/FixedSizer $folding-inner4 $folding-inner4 $folding-inner4 $folding-inner12 $~lib/as-proto/Reader/Reader $folding-inner0 $folding-inner4 $folding-inner4 $~lib/staticarray/StaticArray<u8> $folding-inner0 $folding-inner1 $folding-inner4 $folding-inner0 $folding-inner2 $folding-inner0 $folding-inner0 $folding-inner4 $folding-inner2 $folding-inner0 $folding-inner4 $folding-inner0 $folding-inner3 $folding-inner0 $folding-inner4 $~lib/@koinos/proto-as/koinos/chain/value/value.value_type $folding-inner1 $folding-inner3 $folding-inner0 $folding-inner4 $folding-inner4 $folding-inner1 $folding-inner0 $folding-inner0 $folding-inner5 $folding-inner0 $folding-inner0 $folding-inner4 $folding-inner0 $folding-inner0 $folding-inner1 $folding-inner0 $folding-inner4 $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.database_object $folding-inner0 $folding-inner4 $folding-inner0 $folding-inner0 $~lib/@koinos/sdk-as/util/safeMath/SafeMath.SafeInteger<u64> $~lib/staticarray/StaticArray<~lib/string/String> $~lib/as-bignum/integer/u128/u128 $folding-inner4 $folding-inner0 $folding-inner3 $folding-inner4 $folding-inner0 $folding-inner2 $folding-inner0 $node_modules/@as-pect/assembly/assembly/internal/Expectation/Expectation<bool> $~lib/map/Map<usize,i32> $folding-inner4 $node_modules/@as-pect/assembly/assembly/internal/Expectation/Expectation<u64> $invalid
                        end
                        return
                       end
@@ -14647,9 +14647,9 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -443623474
-  i32.const 24
-  i32.const 71
+  i32.const -365317366
+  i32.const 22
+  i32.const 73
   i32.const 2
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -14660,9 +14660,35 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -1166867156
-  i32.const 25
-  i32.const 30
+  i32.const -1088561048
+  i32.const 23
+  i32.const 32
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1904
+  i32.store
+  i32.const 1904
+  i32.const 646829160
+  i32.const 22
+  i32.const 64
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1904
+  i32.store
+  i32.const 1904
+  i32.const 1961641767
+  i32.const 23
+  i32.const 22
   i32.const 2
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -14686,9 +14712,9 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -324780476
-  i32.const 33
-  i32.const 38
+  i32.const 27247960
+  i32.const 28
+  i32.const 98
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -14699,8 +14725,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -1668756049
-  i32.const 31
+  i32.const -45369
+  i32.const 28
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -14712,8 +14738,34 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -1336874817
-  i32.const 45
+  i32.const -495539075
+  i32.const 33
+  i32.const 53
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1904
+  i32.store
+  i32.const 1904
+  i32.const -1449901331
+  i32.const 33
+  i32.const 3
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1904
+  i32.store
+  i32.const 1904
+  i32.const 1929093116
+  i32.const 37
   i32.const 56
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -14725,8 +14777,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 13717868
-  i32.const 45
+  i32.const -1012191895
+  i32.const 37
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -14738,9 +14790,9 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -951737884
-  i32.const 54
-  i32.const 59
+  i32.const -342412926
+  i32.const 41
+  i32.const 77
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -14751,8 +14803,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -998428658
-  i32.const 54
+  i32.const -423991568
+  i32.const 41
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -14764,9 +14816,9 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -737359550
+  i32.const -502321345
   i32.const 63
-  i32.const 77
+  i32.const 74
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -14790,34 +14842,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 540555619
-  i32.const 92
-  i32.const 74
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1904
-  i32.store
-  i32.const 1904
-  i32.const -533192748
-  i32.const 92
-  i32.const 3
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1904
-  i32.store
-  i32.const 1904
-  i32.const 1366861043
-  i32.const 121
+  i32.const 861838532
+  i32.const 85
   i32.const 57
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -14829,8 +14855,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -913466630
-  i32.const 137
+  i32.const -1428171881
+  i32.const 101
   i32.const 76
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -14842,8 +14868,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -1636710312
-  i32.const 138
+  i32.const 2143551733
+  i32.const 102
   i32.const 35
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -14855,8 +14881,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 693137119
-  i32.const 121
+  i32.const 697808496
+  i32.const 85
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -14868,8 +14894,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 1194958057
-  i32.const 154
+  i32.const -1285742495
+  i32.const 118
   i32.const 80
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -14881,8 +14907,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -1686738305
-  i32.const 154
+  i32.const -1933119497
+  i32.const 118
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -14894,8 +14920,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 2074019536
-  i32.const 188
+  i32.const -1839878737
+  i32.const 145
   i32.const 77
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -14907,8 +14933,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -1809702722
-  i32.const 188
+  i32.const -674591779
+  i32.const 145
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -14920,8 +14946,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 1903961259
-  i32.const 218
+  i32.const 703804817
+  i32.const 168
   i32.const 58
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -14933,8 +14959,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 1607820599
-  i32.const 230
+  i32.const 801305617
+  i32.const 180
   i32.const 40
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -14946,8 +14972,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -877887407
-  i32.const 232
+  i32.const -1684402389
+  i32.const 182
   i32.const 37
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -14959,8 +14985,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -2000126250
-  i32.const 218
+  i32.const -4264388
+  i32.const 168
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -14972,9 +14998,9 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const -1625490409
-  i32.const 251
-  i32.const 59
+  i32.const 1847760527
+  i32.const 201
+  i32.const 56
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -14985,8 +15011,8 @@
   i32.const 1904
   i32.store
   i32.const 1904
-  i32.const 65456513
-  i32.const 251
+  i32.const -1863398596
+  i32.const 201
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -18784,9 +18810,9 @@
    call $~onstore
    i32.const 0
    i32.store offset=32
-   i32.const 693137119
+   i32.const 697808496
    call $~lib/index/__cover
-   i32.const 1366861043
+   i32.const 861838532
    call $~lib/index/__cover
    global.get $~lib/memory/__stack_pointer
    i32.const 4
@@ -18957,7 +18983,7 @@
    local.tee $10
    i64.eqz
    if (result i64)
-    i32.const -913466630
+    i32.const -1428171881
     call $~lib/index/__cover
     i64.const 1
    else
@@ -18994,7 +19020,7 @@
    local.get $9
    i64.eqz
    if (result i64)
-    i32.const -1636710312
+    i32.const 2143551733
     call $~lib/index/__cover
     i64.const 1
    else
@@ -19408,14 +19434,14 @@
   global.set $~lib/memory/__stack_pointer
  )
  (func $assembly/Pool/Pool#deposit_koin (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i64)
+  (local $2 i64)
+  (local $3 i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
   (local $7 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 32
+  i32.const 40
   i32.sub
   global.set $~lib/memory/__stack_pointer
   block $folding-inner1
@@ -19451,94 +19477,73 @@
    call $~onstore
    i64.const 0
    i64.store offset=24
-   i32.const -2010575184
-   call $~lib/index/__cover
-   i32.const -737359550
-   call $~lib/index/__cover
    global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.const 4
-   i32.const 0
-   call $~onstore
-   global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.const 4
-   i32.const 0
-   call $~onstore
-   local.get $1
-   i32.load
-   local.tee $2
-   i32.store
-   local.get $2
-   i32.eqz
-   if
-    i32.const 3664
-    i32.const 1904
-    i32.const 64
-    i32.const 21
-    call $~lib/wasi/index/abort
-    unreachable
-   end
-   local.get $2
-   i32.store
-   local.get $1
-   i64.load offset=8
-   local.set $3
-   global.get $~lib/memory/__stack_pointer
+   i32.const 32
    i32.const 8
+   i32.const 0
+   call $~onstore
+   i64.const 0
+   i64.store offset=32
+   i32.const -423991568
+   call $~lib/index/__cover
+   i32.const -342412926
+   call $~lib/index/__cover
+   global.get $~lib/memory/__stack_pointer
+   i32.const 4
    i32.const 4
    i32.const 0
    call $~onstore
    call $assembly/Constants/Constants.KoinContractId
    local.set $4
    global.get $~lib/memory/__stack_pointer
-   i32.const 4
+   i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
    local.get $4
-   i32.store offset=4
+   i32.store
    local.get $4
    call $~lib/@koinos/sdk-as/util/token/Token#constructor
-   local.tee $4
-   i32.store offset=8
-   global.get $~lib/rt/tlsf/ROOT
+   local.tee $5
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   i32.const 16
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   local.get $1
+   i32.load
+   local.tee $6
+   i32.store offset=16
+   local.get $6
    i32.eqz
    if
-    call $~lib/rt/tlsf/initialize
+    i32.const 3664
+    i32.const 1904
+    i32.const 45
+    i32.const 21
+    call $~lib/wasi/index/abort
+    unreachable
    end
-   global.get $~lib/rt/tlsf/ROOT
-   i32.const 1
-   call $~lib/rt/tlsf/allocateBlock
+   global.get $~lib/memory/__stack_pointer
+   i32.const 8
    i32.const 4
-   i32.add
-   local.tee $5
-   i32.const 0
-   i32.const 1
    i32.const 0
    call $~onstore
-   i32.const 0
-   i32.store8
-   i32.const -1610214466
-   call $~lib/index/__cover
-   i32.const -1155380457
-   call $~lib/index/__cover
-   local.get $5
-   i32.const 0
-   i32.const 1
-   i32.const 0
-   call $~onstore
-   i32.const 0
-   i32.store8
+   local.get $6
+   i32.store offset=8
    call $assembly/Constants/Constants.ContractId
-   local.set $6
+   local.set $7
    global.get $~lib/memory/__stack_pointer
    i32.const 12
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $6
+   local.get $7
    i32.store offset=12
+   local.get $1
+   i64.load offset=8
+   local.set $2
    global.get $~lib/memory/__stack_pointer
    i32.const 20
    i32.sub
@@ -19596,84 +19601,84 @@
    i32.const 16
    i32.const 36
    call $~lib/rt/itcms/__new
-   local.tee $1
+   local.tee $4
    i32.store
-   local.get $1
+   local.get $4
    i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 0
    i32.store
-   local.get $1
+   local.get $4
    i32.const 4
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 0
    i32.store offset=4
-   local.get $1
+   local.get $4
    i32.const 8
    i32.const 8
    i32.const 0
    call $~onstore
    i64.const 0
    i64.store offset=8
-   local.get $1
+   local.get $4
    i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $2
+   local.get $6
    i32.store
-   local.get $2
-   if
-    local.get $1
-    local.get $2
-    i32.const 0
-    call $byn-split-outlined-A$~lib/rt/itcms/__link
-   end
-   local.get $1
-   i32.const 4
-   i32.const 4
-   i32.const 0
-   call $~onstore
-   local.get $6
-   i32.store offset=4
    local.get $6
    if
-    local.get $1
+    local.get $4
     local.get $6
     i32.const 0
     call $byn-split-outlined-A$~lib/rt/itcms/__link
    end
-   local.get $1
+   local.get $4
+   i32.const 4
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   local.get $7
+   i32.store offset=4
+   local.get $7
+   if
+    local.get $4
+    local.get $7
+    i32.const 0
+    call $byn-split-outlined-A$~lib/rt/itcms/__link
+   end
+   local.get $4
    i32.const 8
    i32.const 8
    i32.const 0
    call $~onstore
-   local.get $3
+   local.get $2
    i64.store offset=8
    global.get $~lib/memory/__stack_pointer
    i32.const 4
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $1
+   local.get $4
    i32.store
    global.get $~lib/memory/__stack_pointer
    i32.const 16
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $4
+   local.get $5
    i32.load
-   local.set $4
+   local.set $5
    global.get $~lib/memory/__stack_pointer
    i32.const 4
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $4
+   local.get $5
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
    i32.const 12
@@ -19682,24 +19687,24 @@
    call $~onstore
    i32.const 4160
    i32.store offset=12
-   local.get $1
+   local.get $4
    i32.const 4160
    call $~lib/as-proto/Protobuf/Protobuf.encode<~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.exit_arguments>
-   local.set $1
+   local.set $4
    global.get $~lib/memory/__stack_pointer
    i32.const 8
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $1
-   i32.store offset=8
    local.get $4
+   i32.store offset=8
+   local.get $5
    i32.const 670398154
-   local.get $1
+   local.get $4
    call $~lib/@koinos/sdk-as/systemCalls/System.call
-   local.tee $1
+   local.tee $3
    i32.store offset=16
-   local.get $1
+   local.get $3
    i32.load
    i32.eqz
    global.get $~lib/memory/__stack_pointer
@@ -19707,23 +19712,65 @@
    i32.add
    global.set $~lib/memory/__stack_pointer
    global.get $~lib/memory/__stack_pointer
-   i32.const 4
+   i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 4288
-   i32.store offset=4
+   i32.store
    i32.const 4288
    call $~lib/@koinos/sdk-as/systemCalls/System.require<bool>
-   local.get $0
-   local.get $2
-   local.get $3
-   call $assembly/Pool/Pool#deposit_helper
    global.get $~lib/memory/__stack_pointer
    i32.const 16
    i32.const 4
    i32.const 0
    call $~onstore
+   local.get $1
+   i32.load
+   local.tee $3
+   i32.store offset=16
+   local.get $3
+   i32.eqz
+   if
+    i32.const 3664
+    i32.const 1904
+    i32.const 49
+    i32.const 25
+    call $~lib/wasi/index/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   local.get $3
+   i32.store
+   local.get $0
+   local.get $3
+   local.get $1
+   i64.load offset=8
+   call $assembly/Pool/Pool#deposit_helper
+   global.get $~lib/memory/__stack_pointer
+   i32.const 20
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 7184
+   i32.store offset=20
+   local.get $1
+   i32.load
+   local.set $0
+   global.get $~lib/memory/__stack_pointer
+   i32.const 28
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   local.get $0
+   i32.store offset=28
+   local.get $1
+   i64.load offset=8
+   local.set $2
    global.get $~lib/memory/__stack_pointer
    i32.const 4
    i32.sub
@@ -19745,18 +19792,18 @@
    i32.const 0
    call $~onstore
    i32.const 16
-   i32.const 58
+   i32.const 59
    call $~lib/rt/itcms/__new
-   local.tee $1
+   local.tee $3
    i32.store
-   local.get $1
+   local.get $3
    i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 0
    i32.store
-   local.get $1
+   local.get $3
    i32.const 8
    i32.const 8
    i32.const 0
@@ -19767,89 +19814,106 @@
    call $~lib/index/__cover
    i32.const 374728303
    call $~lib/index/__cover
-   local.get $1
+   local.get $3
    i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $2
+   local.get $0
    i32.store
-   local.get $2
+   local.get $0
    if
-    local.get $1
-    local.get $2
+    local.get $3
+    local.get $0
     i32.const 0
     call $byn-split-outlined-A$~lib/rt/itcms/__link
    end
-   local.get $1
+   local.get $3
    i32.const 8
    i32.const 8
    i32.const 0
    call $~onstore
-   local.get $3
+   local.get $2
    i64.store offset=8
    global.get $~lib/memory/__stack_pointer
    i32.const 4
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=16
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
-   i32.const 4
-   i32.const 0
-   call $~onstore
-   global.get $~lib/memory/__stack_pointer
-   i32.const 20
-   i32.const 4
-   i32.const 0
-   call $~onstore
-   i32.const 1
-   i32.const 2
-   i32.const 59
-   i32.const 0
-   call $~lib/rt/__newArray
-   local.tee $4
-   i32.store offset=20
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
-   i32.const 4
-   i32.const 0
-   call $~onstore
-   local.get $4
-   i32.load offset=4
-   i32.store offset=24
-   local.get $4
-   i32.const 0
-   local.get $2
-   call $~lib/array/Array<~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.exit_arguments>#__uset
-   local.get $4
-   i32.store offset=24
-   global.get $~lib/memory/__stack_pointer
-   i32.const 28
-   i32.const 4
-   i32.const 0
-   call $~onstore
-   i32.const 7184
-   i32.store offset=28
    global.get $~lib/memory/__stack_pointer
    i32.const 12
    i32.const 4
    i32.const 0
    call $~onstore
-   i32.const 7248
+   local.get $3
    i32.store offset=12
-   local.get $1
+   global.get $~lib/memory/__stack_pointer
+   i32.const 24
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 7248
+   i32.store offset=24
+   local.get $3
    i32.const 7248
    call $~lib/as-proto/Protobuf/Protobuf.encode<~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.exit_arguments>
    local.set $0
    global.get $~lib/memory/__stack_pointer
-   i32.const 4
+   i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
    local.get $0
-   i32.store offset=4
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   i32.const 16
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1
+   i32.const 2
+   i32.const 58
+   i32.const 0
+   call $~lib/rt/__newArray
+   local.tee $3
+   i32.store offset=16
+   global.get $~lib/memory/__stack_pointer
+   i32.const 32
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   local.get $3
+   i32.load offset=4
+   i32.store offset=32
+   global.get $~lib/memory/__stack_pointer
+   i32.const 36
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   local.get $1
+   i32.load
+   local.tee $1
+   i32.store offset=36
+   local.get $1
+   i32.eqz
+   if
+    i32.const 3664
+    i32.const 1904
+    i32.const 57
+    i32.const 8
+    call $~lib/wasi/index/abort
+    unreachable
+   end
+   local.get $3
+   i32.const 0
+   local.get $1
+   call $~lib/array/Array<~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.exit_arguments>#__uset
+   global.get $~lib/memory/__stack_pointer
+   i32.const 8
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   local.get $3
+   i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    i32.const 16
    i32.sub
@@ -19900,41 +19964,41 @@
    i32.const 12
    i32.const 61
    call $~lib/rt/itcms/__new
-   local.tee $2
+   local.tee $4
    i32.store
-   local.get $2
+   local.get $4
    i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 0
    i32.store
-   local.get $2
+   local.get $4
    i32.const 4
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 0
    i32.store offset=4
-   local.get $2
+   local.get $4
    i32.const 8
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 0
    i32.store offset=8
-   local.get $2
+   local.get $4
    i32.const 0
    i32.const 4
    i32.const 0
    call $~onstore
    i32.const 7184
    i32.store
-   local.get $2
+   local.get $4
    i32.const 7184
    i32.const 0
    call $byn-split-outlined-A$~lib/rt/itcms/__link
-   local.get $2
+   local.get $4
    i32.const 4
    i32.const 4
    i32.const 0
@@ -19943,22 +20007,22 @@
    i32.store offset=4
    local.get $0
    if
-    local.get $2
+    local.get $4
     local.get $0
     i32.const 0
     call $byn-split-outlined-A$~lib/rt/itcms/__link
    end
-   local.get $2
+   local.get $4
    i32.const 8
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $4
+   local.get $3
    i32.store offset=8
-   local.get $4
+   local.get $3
    if
-    local.get $2
     local.get $4
+    local.get $3
     i32.const 0
     call $byn-split-outlined-A$~lib/rt/itcms/__link
    end
@@ -19966,7 +20030,7 @@
    i32.const 4
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $4
    i32.store
    global.get $~lib/memory/__stack_pointer
    i32.const 8
@@ -19980,7 +20044,7 @@
    call $~onstore
    i32.const 7280
    i32.store offset=4
-   local.get $2
+   local.get $4
    i32.const 7280
    call $~lib/as-proto/Protobuf/Protobuf.encode<~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.exit_arguments>
    local.tee $0
@@ -20007,17 +20071,17 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/@koinos/sdk-as/systemCalls/System.RETURN_BYTES
-   local.set $2
+   local.set $3
    global.get $~lib/memory/__stack_pointer
    i32.const 12
    i32.const 4
    i32.const 0
    call $~onstore
-   local.get $2
+   local.get $3
    i32.store offset=12
    local.get $1
    i32.const 0
-   local.get $2
+   local.get $3
    call $~lib/typedarray/Uint32Array#__get
    call $~lib/typedarray/Uint8Array#slice
    local.set $1
@@ -20038,7 +20102,28 @@
    i32.const 16
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $5
+   global.get $~lib/rt/tlsf/ROOT
+   i32.eqz
+   if
+    call $~lib/rt/tlsf/initialize
+   end
+   global.get $~lib/rt/tlsf/ROOT
+   i32.const 1
+   call $~lib/rt/tlsf/allocateBlock
+   i32.const 4
+   i32.add
+   local.tee $0
+   i32.const 0
+   i32.const 1
+   i32.const 0
+   call $~onstore
+   i32.const 0
+   i32.store8
+   i32.const -1610214466
+   call $~lib/index/__cover
+   i32.const -1155380457
+   call $~lib/index/__cover
+   local.get $0
    i32.const 0
    i32.const 1
    i32.const 0
@@ -20046,10 +20131,10 @@
    i32.const 1
    i32.store8
    global.get $~lib/memory/__stack_pointer
-   i32.const 32
+   i32.const 40
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $5
+   local.get $0
    return
   end
   i32.const 26224
@@ -23164,9 +23249,8 @@
   (local $3 i32)
   (local $4 i64)
   (local $5 i64)
-  (local $6 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 32
+  i32.const 28
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
@@ -23203,50 +23287,50 @@
   i64.store offset=16
   global.get $~lib/memory/__stack_pointer
   i32.const 24
-  i32.const 8
+  i32.const 4
   i32.const 0
   call $~onstore
-  i64.const 0
-  i64.store offset=24
+  i32.const 0
+  i32.store offset=24
   i32.const -1682519286
   call $~lib/index/__cover
   i32.const -1732861930
   call $~lib/index/__cover
+  local.get $0
+  i32.load
+  local.set $3
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 4
   i32.const 0
   call $~onstore
+  local.get $3
+  i32.store
   global.get $~lib/memory/__stack_pointer
-  i32.const 0
+  i32.const 8
   i32.const 4
   i32.const 0
   call $~onstore
   local.get $1
   i32.load
   local.tee $1
-  i32.store
+  i32.store offset=8
   local.get $1
   i32.eqz
   if
    i32.const 3664
    i32.const 1904
    i32.const 15
-   i32.const 21
+   i32.const 44
    call $~lib/wasi/index/abort
    unreachable
   end
-  local.get $1
-  i32.store
-  local.get $0
-  i32.load
-  local.set $3
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.const 4
   i32.const 0
   call $~onstore
-  local.get $3
+  local.get $1
   i32.store offset=4
   local.get $3
   local.get $1
@@ -23256,12 +23340,12 @@
   i32.load
   local.set $1
   global.get $~lib/memory/__stack_pointer
-  i32.const 4
+  i32.const 0
   i32.const 4
   i32.const 0
   call $~onstore
   local.get $1
-  i32.store offset=4
+  i32.store
   local.get $1
   call $assembly/State/State#GetSupply
   i64.load
@@ -23270,16 +23354,108 @@
   i32.load
   local.set $0
   global.get $~lib/memory/__stack_pointer
-  i32.const 4
+  i32.const 0
   i32.const 4
   i32.const 0
   call $~onstore
   local.get $0
-  i32.store offset=4
+  i32.store
   local.get $0
   call $assembly/State/State#GetBasis
   i64.load
   local.set $5
+  global.get $~lib/memory/__stack_pointer
+  i32.const 8
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  local.set $0
+  i64.const 0
+  call $~lib/as-bignum/integer/u128/u128#constructor
+  local.set $1
+  global.get $~lib/memory/__stack_pointer
+  i32.const 16
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  local.get $1
+  i32.store offset=16
+  local.get $5
+  i64.eqz
+  if (result i64)
+   i32.const 646829160
+   call $~lib/index/__cover
+   i32.const -365317366
+   call $~lib/index/__cover
+   i64.const 1
+  else
+   local.get $5
+  end
+  i64.const 0
+  call $~lib/as-bignum/integer/u128/u128#constructor
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  i32.const 20
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  local.get $3
+  i32.store offset=20
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1872
+  i32.store offset=24
+  local.get $1
+  local.get $3
+  call $~lib/@koinos/sdk-as/util/safeMath/SafeMath.mul<~lib/as-bignum/integer/u128/u128>
+  local.set $1
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  local.get $1
+  i32.store
+  local.get $4
+  i64.eqz
+  if (result i64)
+   i32.const 1961641767
+   call $~lib/index/__cover
+   i32.const -1088561048
+   call $~lib/index/__cover
+   i64.const 1
+  else
+   local.get $4
+  end
+  i64.const 0
+  call $~lib/as-bignum/integer/u128/u128#constructor
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1872
+  i32.store offset=12
+  local.get $0
+  local.get $1
+  local.get $3
+  call $~lib/@koinos/sdk-as/util/safeMath/SafeMath.div<~lib/as-bignum/integer/u128/u128>
+  local.tee $0
+  i32.store offset=8
+  local.get $0
+  i64.load
+  local.set $2
   global.get $~lib/rt/tlsf/ROOT
   i32.eqz
   if
@@ -23306,105 +23482,10 @@
   i32.const 8
   i32.const 0
   call $~onstore
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  i32.const 28
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  local.set $1
-  i64.const 0
-  call $~lib/as-bignum/integer/u128/u128#constructor
-  local.set $3
-  global.get $~lib/memory/__stack_pointer
-  i32.const 16
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  local.get $3
-  i32.store offset=16
-  local.get $5
-  i64.eqz
-  if (result i64)
-   i32.const -443623474
-   call $~lib/index/__cover
-   i64.const 1
-  else
-   local.get $5
-  end
-  i64.const 0
-  call $~lib/as-bignum/integer/u128/u128#constructor
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  i32.const 20
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  local.get $6
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1872
-  i32.store offset=24
-  local.get $3
-  local.get $6
-  call $~lib/@koinos/sdk-as/util/safeMath/SafeMath.mul<~lib/as-bignum/integer/u128/u128>
-  local.set $3
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  local.get $3
-  i32.store offset=4
-  local.get $4
-  i64.eqz
-  if (result i64)
-   i32.const -1166867156
-   call $~lib/index/__cover
-   i64.const 1
-  else
-   local.get $4
-  end
-  i64.const 0
-  call $~lib/as-bignum/integer/u128/u128#constructor
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  local.get $6
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  i32.const 12
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1872
-  i32.store offset=12
-  local.get $1
-  local.get $3
-  local.get $6
-  call $~lib/@koinos/sdk-as/util/safeMath/SafeMath.div<~lib/as-bignum/integer/u128/u128>
-  local.tee $1
-  i32.store offset=28
-  local.get $1
-  i64.load
-  local.set $2
-  local.get $0
-  i32.const 0
-  i32.const 8
-  i32.const 0
-  call $~onstore
   local.get $2
   i64.store
   global.get $~lib/memory/__stack_pointer
-  i32.const 32
+  i32.const 28
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $0

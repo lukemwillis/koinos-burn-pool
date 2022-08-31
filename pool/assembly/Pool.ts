@@ -11,8 +11,8 @@ export class Pool {
     this._state = new State();
   }
 
-  balance_of({ account }: pool.balance_of_arguments): pool.balance_of_result {
-    const balance = this._state.GetBalance(account!).value; // internal tracked value, not 1:1 with KOIN/VHP held by contract
+  balance_of(args: pool.balance_of_arguments): pool.balance_of_result {
+    const balance = this._state.GetBalance(args.account!).value; // internal tracked value, not 1:1 with KOIN/VHP held by contract
     const supply = this._state.GetSupply().value; // total of all internal tracked balances
     const basis = this._state.GetBasis().value; // total KOIN/VHP held by contract not including recent profit
 
@@ -25,63 +25,58 @@ export class Pool {
     );
   }
 
-  balance_of_unscaled = ({
-    account,
-  }: pool.balance_of_unscaled_arguments): pool.balance_of_unscaled_result =>
+  balance_of_unscaled(args: pool.balance_of_unscaled_arguments): pool.balance_of_unscaled_result {
     // just the internal tracked value, not scaled for your share of KOIN/VHP
-    new pool.balance_of_unscaled_result(this._state.GetBalance(account!).value);
+    return new pool.balance_of_unscaled_result(this._state.GetBalance(args.account!).value);
+  }
 
-  basis = (_: pool.basis_arguments): pool.basis_result =>
-    new pool.basis_result(this._state.GetBasis().value);
+  basis(_: pool.basis_arguments): pool.basis_result {
+    return new pool.basis_result(this._state.GetBasis().value);
+  }
 
-  supply = (_: pool.supply_arguments): pool.supply_result =>
-    new pool.supply_result(this._state.GetSupply().value);
+  supply(_: pool.supply_arguments): pool.supply_result {
+    return new pool.supply_result(this._state.GetSupply().value);
+  }
 
-  deposit_koin({
-    account,
-    value,
-  }: pool.deposit_koin_arguments): pool.deposit_koin_result {
+  deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {
     const koin = new Token(Constants.KoinContractId());
 
     System.require(
-      koin.transfer(account!, Constants.ContractId(), value),
+      koin.transfer(args.account!, Constants.ContractId(), args.value),
       "KOIN transfer from account failed. Please ensure you are authorized to transfer from this address and that your balance is sufficient."
     );
 
-    this.deposit_helper(account!, value);
+    this.deposit_helper(args.account!, args.value);
 
     System.event(
       "pool.deposit_koin",
       Protobuf.encode(
-        new pool.deposit_koin_event(account, value),
+        new pool.deposit_koin_event(args.account, args.value),
         pool.deposit_koin_event.encode
       ),
-      [account!]
+      [args.account!]
     );
 
     return new pool.deposit_koin_result(true);
   }
 
-  deposit_vhp({
-    account,
-    value,
-  }: pool.deposit_vhp_arguments): pool.deposit_vhp_result {
+  deposit_vhp(args: pool.deposit_vhp_arguments): pool.deposit_vhp_result {
     const vhp = new Token(Constants.VhpContractId());
 
     System.require(
-      vhp.transfer(account!, Constants.ContractId(), value),
+      vhp.transfer(args.account!, Constants.ContractId(), args.value),
       "VHP transfer from account failed. Please ensure you are authorized to transfer from this address and that your balance is sufficient."
     );
 
-    this.deposit_helper(account!, value);
+    this.deposit_helper(args.account!, args.value);
 
     System.event(
       "pool.deposit_vhp",
       Protobuf.encode(
-        new pool.deposit_vhp_event(account, value),
+        new pool.deposit_vhp_event(args.account, args.value),
         pool.deposit_vhp_event.encode
       ),
-      [account!]
+      [args.account!]
     );
 
     return new pool.deposit_vhp_result(true);
@@ -120,10 +115,7 @@ export class Pool {
     this._state.SaveBasis(basis);
   }
 
-  withdraw_koin({
-    account,
-    value,
-  }: pool.withdraw_koin_arguments): pool.withdraw_koin_result {
+  withdraw_koin(args: pool.withdraw_koin_arguments): pool.withdraw_koin_result {
     const koin = new Token(Constants.KoinContractId());
 
     // availableMana represents how much liquid KOIN is in the contract.
@@ -131,46 +123,43 @@ export class Pool {
     System.require(
       // availableMana - value = contract's liquid koin balance after withdrawal
       // we keep a buffer of KOIN to ensure we can always pay mana for creating blocks
-      availableMana - value >= Constants.KoinBuffer(),
+      availableMana - args.value >= Constants.KoinBuffer(),
       "Contract had insufficient funds for withdrawal. Try withdrawing VHP instead."
     );
-    koin.transfer(Constants.ContractId(), account!, value);
+    koin.transfer(Constants.ContractId(), args.account!, args.value);
 
-    this.withdraw_helper(account!, value);
+    this.withdraw_helper(args.account!, args.value);
 
     System.event(
       "pool.withdraw_koin",
       Protobuf.encode(
-        new pool.withdraw_koin_event(account, value),
+        new pool.withdraw_koin_event(args.account, args.value),
         pool.withdraw_koin_event.encode
       ),
-      [account!]
+      [args.account!]
     );
 
     return new pool.withdraw_koin_result(true);
   }
 
-  withdraw_vhp({
-    account,
-    value,
-  }: pool.withdraw_vhp_arguments): pool.withdraw_vhp_result {
+  withdraw_vhp(args: pool.withdraw_vhp_arguments): pool.withdraw_vhp_result {
     const vhp = new Token(Constants.VhpContractId());
 
     // TODO this call fails due to an authority issue in the VHP contract
     System.require(
-      vhp.transfer(Constants.ContractId(), account!, value),
+      vhp.transfer(Constants.ContractId(), args.account!, args.value),
       "Contract had insufficient funds for withdrawal. Try withdrawing KOIN instead."
     );
 
-    this.withdraw_helper(account!, value);
+    this.withdraw_helper(args.account!, args.value);
 
     System.event(
       "pool.withdraw_vhp",
       Protobuf.encode(
-        new pool.withdraw_vhp_event(account, value),
+        new pool.withdraw_vhp_event(args.account, args.value),
         pool.withdraw_vhp_event.encode
       ),
-      [account!]
+      [args.account!]
     );
 
     return new pool.withdraw_vhp_result(true);
