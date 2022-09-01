@@ -12,17 +12,17 @@ export class State {
     this.basisSpace = new chain.object_space(false, Constants.ContractId(), BASIS_SPACE_ID);
   }
 
-  GetBasis(): pool.balance_object {
-    const basis = System.getObject<Uint8Array, pool.balance_object>(this.basisSpace, BASIS_KEY, pool.balance_object.decode);
+  GetBasis(): pool.basis_object {
+    const basis = System.getObject<Uint8Array, pool.basis_object>(this.basisSpace, BASIS_KEY, pool.basis_object.decode);
 
     if (basis) {
       return basis;
     }
 
-    return new pool.balance_object();
+    return new pool.basis_object();
   }
 
-  SaveBasis(basis: pool.balance_object): void {
-    System.putObject(this.basisSpace, BASIS_KEY, basis, pool.balance_object.encode);
+  SaveBasis(basis: pool.basis_object): void {
+    System.putObject(this.basisSpace, BASIS_KEY, basis, pool.basis_object.encode);
   }
 }

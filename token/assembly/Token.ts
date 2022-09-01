@@ -77,7 +77,7 @@ export class Token {
   mint(args: token.mint_arguments): token.mint_result {
     // only the pool is allowed to mint
     System.require(
-      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()),
+      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()) || System.checkAuthority(authority.authorization_type.contract_call, Constants.ContractId()),
       "mint not authorized",
       error.error_code.authorization_failure
     );
@@ -108,7 +108,7 @@ export class Token {
   burn(args: token.burn_arguments): token.burn_result {
     // only the pool is allowed to burn
     System.require(
-      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()),
+      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()) || System.checkAuthority(authority.authorization_type.contract_call, Constants.ContractId()),
       "burn not authorized",
       error.error_code.authorization_failure
     );
