@@ -128,7 +128,7 @@
  (global $~lib/memory/__stack_pointer (mut i32) (i32.const 24204))
  (global $~started (mut i32) (i32.const 0))
  (table $0 12 funcref)
- (elem $0 (i32.const 1) $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.exit_arguments.encode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.put_object_arguments.encode $start:assembly/__tests__/pool.spec~anonymous|0~anonymous|0 $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_contract_id_arguments.encode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_contract_id_result.decode $assembly/proto/pool/pool.balance_object.decode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_object_arguments.encode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_object_result.decode $start:assembly/__tests__/pool.spec~anonymous|0~anonymous|1 $start:assembly/__tests__/pool.spec~anonymous|0 $start:node_modules/@as-pect/assembly/assembly/internal/noOp~anonymous|0)
+ (elem $0 (i32.const 1) $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.exit_arguments.encode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.put_object_arguments.encode $start:assembly/__tests__/pool.spec~anonymous|0~anonymous|0 $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_contract_id_arguments.encode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_contract_id_result.decode $assembly/proto/pool/pool.basis_object.decode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_object_arguments.encode $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_object_result.decode $start:assembly/__tests__/pool.spec~anonymous|0~anonymous|1 $start:assembly/__tests__/pool.spec~anonymous|0 $start:node_modules/@as-pect/assembly/assembly/internal/noOp~anonymous|0)
  (export "__ignoreLogs" (func $node_modules/@as-pect/assembly/assembly/internal/log/__ignoreLogs))
  (export "memory" (memory $0))
  (export "table" (table $0))
@@ -5598,7 +5598,7 @@
  (func $~lib/@koinos/proto-as/koinos/chain/system_calls/system_calls.get_contract_id_arguments.encode (param $0 i32) (param $1 i32)
   nop
  )
- (func $assembly/proto/pool/pool.balance_object#constructor (result i32)
+ (func $assembly/proto/pool/pool.basis_object#constructor (result i32)
   (local $0 i32)
   global.get $~lib/rt/tlsf/ROOT
   i32.eqz
@@ -5630,13 +5630,13 @@
   i64.store
   local.get $0
  )
- (func $assembly/proto/pool/pool.balance_object.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/pool/pool.basis_object.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i64)
   (local $4 i32)
   i32.const 1087120125
   call $~lib/index/__cover
-  i32.const -144749457
+  i32.const 1443598445
   call $~lib/index/__cover
   local.get $1
   i32.const 0
@@ -5655,7 +5655,7 @@
    i32.add
   end
   local.set $2
-  call $assembly/proto/pool/pool.balance_object#constructor
+  call $assembly/proto/pool/pool.basis_object#constructor
   local.set $1
   loop $while-continue|0
    local.get $2
@@ -10518,9 +10518,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1124046349
+  i32.const -1582573045
   i32.const 528
-  i32.const 66
+  i32.const 64
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10557,9 +10557,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -144749457
+  i32.const 1443598445
   i32.const 535
-  i32.const 64
+  i32.const 62
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -12092,9 +12092,9 @@
    i32.const 2032
    i32.store
    i32.const 2032
-   i32.const -1422653136
+   i32.const 165694766
    i32.const 15
-   i32.const 35
+   i32.const 33
    i32.const 1
    call $~lib/index/__coverDeclare
    global.get $~lib/memory/__stack_pointer
@@ -12131,9 +12131,9 @@
    i32.const 2032
    i32.store
    i32.const 2032
-   i32.const 498244818
+   i32.const 2086592720
    i32.const 25
-   i32.const 47
+   i32.const 45
    i32.const 1
    call $~lib/index/__coverDeclare
    global.get $~lib/memory/__stack_pointer
@@ -17402,7 +17402,7 @@
       i32.store offset=8
       i32.const 1817978908
       call $~lib/index/__cover
-      i32.const -1422653136
+      i32.const 165694766
       call $~lib/index/__cover
       local.get $2
       i32.load
@@ -17455,7 +17455,7 @@
       call $~lib/@koinos/sdk-as/systemCalls/System.getBytes<~lib/typedarray/Uint8Array>
       local.tee $2
       i32.store
-      block $__inlined_func$~lib/@koinos/sdk-as/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/pool/pool.balance_object>
+      block $__inlined_func$~lib/@koinos/sdk-as/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/pool/pool.basis_object>
        local.get $2
        i32.eqz
        if
@@ -17463,7 +17463,7 @@
         i32.const 4
         i32.add
         global.set $~lib/memory/__stack_pointer
-        br $__inlined_func$~lib/@koinos/sdk-as/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/pool/pool.balance_object>
+        br $__inlined_func$~lib/@koinos/sdk-as/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/pool/pool.basis_object>
        end
        i32.const 2
        global.set $~argumentsLength
@@ -17484,7 +17484,7 @@
         call $~lib/index/__cover
         br $__inlined_func$assembly/State/State#GetBasis
        end
-       call $assembly/proto/pool/pool.balance_object#constructor
+       call $assembly/proto/pool/pool.basis_object#constructor
        local.set $0
       end
       global.get $~lib/memory/__stack_pointer

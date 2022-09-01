@@ -11974,6 +11974,19 @@
   i32.const 1904
   i32.store
   i32.const 1904
+  i32.const 1172940018
+  i32.const 80
+  i32.const 78
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1904
+  i32.store
+  i32.const 1904
   i32.const 1755258488
   i32.const 77
   i32.const 3
@@ -11991,6 +12004,19 @@
   i32.const 108
   i32.const 55
   i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1904
+  i32.store
+  i32.const 1904
+  i32.const 216476287
+  i32.const 111
+  i32.const 78
+  i32.const 2
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
   i32.const 0
