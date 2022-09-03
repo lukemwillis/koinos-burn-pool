@@ -11686,8 +11686,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 1119825382
-   i32.const 10
+   i32.const -106647293
+   i32.const 13
    i32.const 17
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11699,8 +11699,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -2120228722
-   i32.const 10
+   i32.const 355537003
+   i32.const 13
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11712,8 +11712,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -1732861930
-   i32.const 14
+   i32.const 1335632691
+   i32.const 17
    i32.const 71
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11725,8 +11725,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -224768756
-   i32.const 24
+   i32.const 2133537807
+   i32.const 27
    i32.const 73
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -11738,8 +11738,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -948012438
-   i32.const 25
+   i32.const 1410294125
+   i32.const 28
    i32.const 32
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -11751,8 +11751,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 787377770
-   i32.const 24
+   i32.const -1149282963
+   i32.const 27
    i32.const 64
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -11764,8 +11764,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 2102190377
-   i32.const 25
+   i32.const 165529644
+   i32.const 28
    i32.const 22
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -11777,8 +11777,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -1682519286
-   i32.const 14
+   i32.const 793246439
+   i32.const 17
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11790,8 +11790,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 730933600
-   i32.const 30
+   i32.const -495539075
+   i32.const 33
    i32.const 53
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11803,8 +11803,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 369300240
-   i32.const 30
+   i32.const -1449901331
+   i32.const 33
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11816,8 +11816,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -1780236514
-   i32.const 34
+   i32.const 1288258107
+   i32.const 37
    i32.const 77
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11829,8 +11829,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 807009676
-   i32.const 34
+   i32.const -1012191895
+   i32.const 37
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11842,8 +11842,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -1940144933
-   i32.const 56
+   i32.const 724151330
+   i32.const 60
    i32.const 74
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11855,8 +11855,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -779573940
-   i32.const 56
+   i32.const -191373613
+   i32.const 60
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11868,8 +11868,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -575985056
-   i32.const 78
+   i32.const 2088311207
+   i32.const 82
    i32.const 57
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11881,8 +11881,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 1811571464
-   i32.const 94
+   i32.const 133021918
+   i32.const 102
    i32.const 70
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -11894,8 +11894,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 1744891936
-   i32.const 95
+   i32.const 66342390
+   i32.const 103
    i32.const 35
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -11907,8 +11907,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 1928809740
-   i32.const 78
+   i32.const -1777957229
+   i32.const 82
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11920,8 +11920,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 138203492
-   i32.const 104
+   i32.const 758378630
+   i32.const 113
    i32.const 80
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11933,8 +11933,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 679373882
-   i32.const 104
+   i32.const -332772644
+   i32.const 113
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11946,8 +11946,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -415932750
-   i32.const 131
+   i32.const 204242388
+   i32.const 140
    i32.const 77
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11959,8 +11959,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 1937901600
-   i32.const 131
+   i32.const 925755074
+   i32.const 140
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -11972,8 +11972,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 2127750804
-   i32.const 154
+   i32.const -1547041354
+   i32.const 163
    i32.const 58
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -11985,8 +11985,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -1723352555
-   i32.const 167
+   i32.const 384876595
+   i32.const 176
    i32.const 34
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -11998,8 +11998,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 892961780
-   i32.const 169
+   i32.const -1293776366
+   i32.const 178
    i32.const 37
    i32.const 2
    call $~lib/index/__coverDeclare
@@ -12011,8 +12011,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -1686738305
-   i32.const 154
+   i32.const 1596082465
+   i32.const 163
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -12024,8 +12024,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const 464008374
-   i32.const 183
+   i32.const 1084183512
+   i32.const 192
    i32.const 56
    i32.const 1
    call $~lib/index/__coverDeclare
@@ -12037,8 +12037,8 @@
    i32.const 1904
    i32.store
    i32.const 1904
-   i32.const -209355869
-   i32.const 183
+   i32.const -1221502395
+   i32.const 192
    i32.const 3
    i32.const 0
    call $~lib/index/__coverDeclare
@@ -12157,6 +12157,11 @@
    i32.const 4
    i32.add
    global.set $~lib/memory/__stack_pointer
+   i32.const 1048576
+   global.set $~lib/@koinos/sdk-as/systemCalls/System.MAX_BUFFER_SIZE
+   i32.const 1048576
+   call $~lib/typedarray/Uint8Array#constructor
+   global.set $~lib/@koinos/sdk-as/systemCalls/System.SYSTEM_CALL_BUFFER
    global.get $~lib/memory/__stack_pointer
    i32.const 4
    i32.add
@@ -17077,9 +17082,9 @@
     call $~onstore
     i32.const 0
     i32.store
-    i32.const -2120228722
+    i32.const 355537003
     call $~lib/index/__cover
-    i32.const 1119825382
+    i32.const -106647293
     call $~lib/index/__cover
     global.get $~lib/memory/__stack_pointer
     i32.const 8
@@ -17364,9 +17369,9 @@
       call $~onstore
       i32.const 0
       i32.store
-      i32.const 369300240
+      i32.const -1449901331
       call $~lib/index/__cover
-      i32.const 730933600
+      i32.const -495539075
       call $~lib/index/__cover
       local.get $3
       i32.load

@@ -4,6 +4,9 @@ import { pool } from "./proto/pool";
 import { State } from "./State";
 import { Constants } from "./Constants";
 
+// A few methods were running out of memory. This fixes it
+System.setSystemBufferSize(1024*1024);
+
 export class Pool {
   _state: State;
 
@@ -32,6 +35,7 @@ export class Pool {
   }
 
   deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {
+    System.log("SYSTEM_BUFFER_SIZE: " + System.getSystemBufferSize().toString());
     const koin = new Token(Constants.KoinContractId());
 
     System.require(
@@ -82,9 +86,13 @@ export class Pool {
 
     const supply = token.totalSupply();
     const basis = this._state.GetBasis();
+    const koinBal = koin.balanceOf(Constants.ContractId());
+    const vhpBal = 0; // vhp.balanceOf(Constants.ContractId());
+    System.log("deposit_helper vhp balance SKIPPED AGAIN");
+
     const totalStaked = SafeMath.add(
-      koin.balanceOf(Constants.ContractId()),
-      vhp.balanceOf(Constants.ContractId())
+      koinBal,
+      vhpBal
     );
 
     // value * supply / totalStaked = how much internal balance to track for your address
@@ -94,6 +102,7 @@ export class Pool {
       SafeMath.mul<u128>(u128.fromU64(value), u128.fromU64(supply || 1)),
       u128.fromU64(totalStaked || 1)
     ).toU64();
+
     System.require(token.mint(account, scaledValue), 'Failed to mint tokens for tracking balance.');
 
     // increase basis so your new deposit isn't counted as profits
@@ -185,10 +194,10 @@ export class Pool {
     const vhp = new Token(Constants.VhpContractId());
 
     const basis = this._state.GetBasis();
-    const totalStaked = SafeMath.add(
-      koin.balanceOf(Constants.ContractId()),
-      vhp.balanceOf(Constants.ContractId())
-    );
+    const totalStaked = // SafeMath.add(
+      koin.balanceOf(Constants.ContractId()); // ,
+      // vhp.balanceOf(Constants.ContractId())
+    // );
 
     // totalStaked - basis / operatorFee = profit since last reburn / 20
     // operator takes 5% of profits
