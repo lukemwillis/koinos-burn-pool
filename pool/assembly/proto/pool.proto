@@ -5,7 +5,7 @@ package pool;
 import "koinos/options.proto"; 
 
 /*
-   @description Get staking balance
+   @description Get value of KOIN/VHP based on PVHP held by address
    @read-only true
 */
 message balance_of_arguments {
@@ -27,7 +27,7 @@ message basis_result {
 }
 
 /*
-   @description Deposit koin
+   @description Deposit KOIN
    @read-only false
 */
 message deposit_koin_arguments {
@@ -40,7 +40,7 @@ message deposit_koin_result {
 }
 
 /*
-   @description Deposit vhp
+   @description Deposit VHP
    @read-only false
 */
 message deposit_vhp_arguments {
@@ -53,7 +53,7 @@ message deposit_vhp_result {
 }
 
 /*
-   @description Withdraw koin
+   @description Withdraw KOIN for an amount of PVHP
    @read-only false
 */
 message withdraw_koin_arguments {
@@ -66,7 +66,7 @@ message withdraw_koin_result {
 }
 
 /*
-   @description Withdraw vhp
+   @description Withdraw VHP for an amount of PVHP
    @read-only false
 */
 message withdraw_vhp_arguments {
@@ -79,7 +79,7 @@ message withdraw_vhp_result {
 }
 
 /*
-   @description Burn koin held by contract for VHP, distribute profit share to operator
+   @description Burn KOIN held by contract for VHP, distribute profit share to operator
    @read-only false
 */
 message reburn_arguments {}
@@ -112,4 +112,8 @@ message withdraw_koin_event {
 message withdraw_vhp_event {
    bytes account = 1 [(koinos.btype) = ADDRESS];
    uint64 value = 2 [jstype = JS_STRING];
+}
+
+message reburn_event {
+   uint64 amount_burned = 1 [jstype = JS_STRING];
 }

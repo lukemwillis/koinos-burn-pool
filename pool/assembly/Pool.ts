@@ -100,7 +100,7 @@ export class Pool {
 
     System.require(
       token.mint(account, scaledValue),
-      "Failed to mint tokens for tracking balance."
+      "Failed to mint PVHP"
     );
 
     // increase basis so your new deposit isn't counted as profits
@@ -221,7 +221,7 @@ export class Pool {
     const availableMana = System.getAccountRC(Constants.ContractId());
     System.require(
       // don't go below koin buffer to ensure we always have enough to pay mana for block production
-      availableMana >= Constants.KoinBuffer(),
+      availableMana > Constants.KoinBuffer(),
       "Not enough liquid KOIN in contract to burn"
     );
 
@@ -242,7 +242,16 @@ export class Pool {
       Constants.PobBurnEntryPoint(),
       Protobuf.encode(pobArgs, pob.burn_arguments.encode)
     );
-    System.require(callRes.code == 0, "failed to burn tokens");
+    System.require(callRes.code == 0, "Failed to burn KOIN for VHP");
+
+    System.event(
+      "pool.reburn",
+      Protobuf.encode(
+        new pool.reburn_event(koinToBurn),
+        pool.reburn_event.encode
+      ),
+      [Constants.ContractId()]
+    );
 
     return new pool.reburn_result(true);
   }
