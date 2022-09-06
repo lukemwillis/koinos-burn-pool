@@ -5,7 +5,7 @@ import { State } from "./State";
 import { Constants } from "./Constants";
 
 // A few methods were running out of memory. This fixes it
-System.setSystemBufferSize(1024*1024);
+System.setSystemBufferSize(1024 * 1024);
 
 export class Pool {
   _state: State;
@@ -88,10 +88,7 @@ export class Pool {
     const koinBal = koin.balanceOf(Constants.ContractId());
     const vhpBal = vhp.balanceOf(Constants.ContractId());
 
-    const totalStaked = SafeMath.add(
-      koinBal,
-      vhpBal
-    );
+    const totalStaked = SafeMath.add(koinBal, vhpBal);
 
     // value * supply / totalStaked = how much internal balance to track for your address
     // since value is in KOIN/VHP, we have to scale it based on the ratio of all internal balances to KOIN/VHP in the contract
@@ -101,7 +98,10 @@ export class Pool {
       u128.fromU64(totalStaked || 1)
     ).toU64();
 
-    System.require(token.mint(account, scaledValue), 'Failed to mint tokens for tracking balance.');
+    System.require(
+      token.mint(account, scaledValue),
+      "Failed to mint tokens for tracking balance."
+    );
 
     // increase basis so your new deposit isn't counted as profits
     basis.value = SafeMath.add(basis.value, value);
@@ -119,9 +119,13 @@ export class Pool {
       availableMana - args.value >= Constants.KoinBuffer(),
       "Contract had insufficient funds for withdrawal. Try withdrawing VHP instead."
     );
-    koin.transfer(Constants.ContractId(), args.account!, args.value);
 
-    this.withdraw_helper(args.account!, args.value);
+    const scaledValue = this.withdraw_helper(args.account!, args.value);
+
+    System.require(
+      koin.transfer(Constants.ContractId(), args.account!, scaledValue),
+      "Failed to transfer KOIN"
+    );
 
     System.event(
       "pool.withdraw_koin",
@@ -138,13 +142,13 @@ export class Pool {
   withdraw_vhp(args: pool.withdraw_vhp_arguments): pool.withdraw_vhp_result {
     const vhp = new Token(Constants.VhpContractId());
 
+    const scaledValue = this.withdraw_helper(args.account!, args.value);
+
     // TODO this call fails due to an authority issue in the VHP contract
     System.require(
-      vhp.transfer(Constants.ContractId(), args.account!, args.value),
+      vhp.transfer(Constants.ContractId(), args.account!, scaledValue),
       "Contract had insufficient funds for withdrawal. Try withdrawing KOIN instead."
     );
-
-    this.withdraw_helper(args.account!, args.value);
 
     System.event(
       "pool.withdraw_vhp",
@@ -158,33 +162,29 @@ export class Pool {
     return new pool.withdraw_vhp_result(true);
   }
 
-  withdraw_helper(account: Uint8Array, value: u64): void {
+  withdraw_helper(account: Uint8Array, value: u64): u64 {
     const token = new Token(Constants.PoolTokenContractId());
 
     const supply = token.totalSupply();
     const basis = this._state.GetBasis();
 
-    // value * supply / basis + 1 = your share of internal supply
-    // since value is in KOIN/VHP, we scale this number based on the ratio of all internal balances to KOIN/VHP held by contract
-    // we use basis instead of totalStaked because profits aren't allocated to users until operator takes fee
-    const scaledValue = SafeMath.add<u128>(
-      SafeMath.div<u128>(
-        SafeMath.mul<u128>(
-          u128.fromU64(value),
-          u128.fromU64(supply || 1)
-        ),
-        u128.fromU64(basis.value || 1)
-      ),
-      u128.One // prevent infinite 1 satoshi withdrawals
-    ).toU64();
-
     System.require(
-      token.burn(account, scaledValue),
+      token.burn(account, value),
       "Account has insufficient balance. Please withdraw a smaller amount."
     );
 
-    basis.value = SafeMath.sub(basis.value, value);
+    // value * basis / supply = your share of KOIN/VHP to redeem for ${value} PVHP
+    // since value is in PVHP, we scale this number based on the ratio of all internal balances to KOIN/VHP held by contract
+    // we use basis instead of totalStaked because profits aren't allocated to users until operator takes fee during reburn
+    const scaledValue = SafeMath.div<u128>(
+      SafeMath.mul<u128>(u128.fromU64(value), u128.fromU64(basis.value || 1)),
+      u128.fromU64(supply || 1)
+    ).toU64();
+
+    basis.value = SafeMath.sub(basis.value, scaledValue);
     this._state.SaveBasis(basis);
+
+    return scaledValue;
   }
 
   reburn(_: pool.reburn_arguments): pool.reburn_result {

@@ -17,7 +17,7 @@ message balance_of_result {
 }
 
 /*
-   @description Get internal basis
+   @description Get internal basis used for tracking profit between reburns
    @read-only true
 */
 message basis_arguments {}
