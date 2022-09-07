@@ -79,6 +79,8 @@ export class Pool {
   }
 
   deposit_helper(account: Uint8Array, value: u64): void {
+    this.allocate_profit();
+
     const token = new Token(Constants.PoolTokenContractId());
     const koin = new Token(Constants.KoinContractId());
     const vhp = new Token(Constants.VhpContractId());
@@ -163,6 +165,8 @@ export class Pool {
   }
 
   withdraw_helper(account: Uint8Array, value: u64): u64 {
+    this.allocate_profit();
+
     const token = new Token(Constants.PoolTokenContractId());
 
     const supply = token.totalSupply();
@@ -188,35 +192,7 @@ export class Pool {
   }
 
   reburn(_: pool.reburn_arguments): pool.reburn_result {
-    const koin = new Token(Constants.KoinContractId());
-    const vhp = new Token(Constants.VhpContractId());
-
-    const basis = this._state.GetBasis();
-    const totalStaked = SafeMath.add(
-      koin.balanceOf(Constants.ContractId()),
-      vhp.balanceOf(Constants.ContractId())
-    );
-
-    // totalStaked - basis / operatorFee = profit since last reburn / 20
-    // operator takes 5% of profits
-    const operatorShareOfProfit = SafeMath.div(
-      SafeMath.sub(totalStaked, basis.value),
-      Constants.OperatorFee()
-    );
-
-    System.require(
-      koin.transfer(
-        Constants.ContractId(),
-        Constants.OperatorWallet(),
-        operatorShareOfProfit
-      ),
-      "Failed to transfer operator share of profit"
-    );
-
-    // reset basis to totalStaked - operatorShare
-    // this ensures we don't take operator fee more than once on any given profit
-    basis.value = SafeMath.sub(totalStaked, operatorShareOfProfit);
-    this._state.SaveBasis(basis);
+    this.allocate_profit();
 
     const availableMana = System.getAccountRC(Constants.ContractId());
     System.require(
@@ -254,5 +230,41 @@ export class Pool {
     );
 
     return new pool.reburn_result(true);
+  }
+
+  allocate_profit(): void {
+    const koin = new Token(Constants.KoinContractId());
+    const vhp = new Token(Constants.VhpContractId());
+
+    const basis = this._state.GetBasis();
+    const totalStaked = SafeMath.add(
+      koin.balanceOf(Constants.ContractId()),
+      vhp.balanceOf(Constants.ContractId())
+    );
+
+    if (basis.value == totalStaked) {
+      return;
+    }
+
+    // totalStaked - basis / operatorFee = profit since last reburn / 20
+    // operator takes 5% of profits
+    const operatorShareOfProfit = SafeMath.div(
+      SafeMath.sub(totalStaked, basis.value),
+      Constants.OperatorFee()
+    );
+
+    System.require(
+      koin.transfer(
+        Constants.ContractId(),
+        Constants.OperatorWallet(),
+        operatorShareOfProfit
+      ),
+      "Failed to transfer operator share of profit"
+    );
+
+    // reset basis to totalStaked - operatorShare
+    // this ensures we don't take operator fee more than once on any given profit
+    basis.value = SafeMath.sub(totalStaked, operatorShareOfProfit);
+    this._state.SaveBasis(basis);
   }
 }
