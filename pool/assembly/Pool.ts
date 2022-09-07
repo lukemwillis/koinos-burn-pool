@@ -88,7 +88,7 @@ export class Pool {
     const koinBal = koin.balanceOf(Constants.ContractId());
     const vhpBal = vhp.balanceOf(Constants.ContractId());
 
-    const totalStaked = SafeMath.add(koinBal, vhpBal);
+    const totalStaked = SafeMath.sub(SafeMath.add(koinBal, vhpBal), value);
 
     // value * supply / totalStaked = how much internal balance to track for your address
     // since value is in KOIN/VHP, we have to scale it based on the ratio of all internal balances to KOIN/VHP in the contract
