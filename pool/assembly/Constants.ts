@@ -1,39 +1,56 @@
 import { Base58, System } from "@koinos/sdk-as";
 
-export class Constants {
-  static KoinBuffer(): u64 { // amount to disallow withdrawal or burning
-    return 1000000000; // 10 Koin
+export namespace Constants {
+  export const KOIN_BUFFER: u64 = 1000000000; // 10 Koin
+  export const POB_BURN_ENTRY_POINT: u32 = 0x859facc5;
+  export const OPERATOR_FEE: u64 = 20; // 1/20 = 5%
+
+  let contractId: Uint8Array | null = null;
+  let poolTokenContractId: Uint8Array | null = null;
+  let koinContractId: Uint8Array | null = null;
+  let vhpContractId: Uint8Array | null = null;
+  let pobContractId: Uint8Array | null = null;
+  let operatorWallet: Uint8Array | null = null;
+
+  export function ContractId(): Uint8Array {
+    if (contractId == null) {
+      contractId = System.getContractId();
+    }
+    return contractId!;
   }
 
-  static OperatorFee(): u64 {
-    return 20; // 1/20 = 5%
-  }
-  
-  static OperatorWallet(): Uint8Array {
-    return Base58.decode('1DfotF65NdVdLfNzrrhexzS7oFmJuXvLsT');
-  }
-
-  static ContractId(): Uint8Array {
-    return System.getContractId();
+  export function PoolTokenContractId(): Uint8Array {
+    if (poolTokenContractId == null) {
+      poolTokenContractId = Base58.decode('1LeuEQVZkiJjpKdrhu9v1qFvkk2yi8RdFM');
+    }
+    return poolTokenContractId!;
   }
 
-  static PoolTokenContractId(): Uint8Array {
-    return Base58.decode('13n14L2JhnWTjt6eX3DVkz1mtCFwwCfJZX');
+  export function KoinContractId(): Uint8Array {
+    if (koinContractId == null) {
+      koinContractId = Base58.decode('19JntSm8pSNETT9aHTwAUHC5RMoaSmgZPJ');
+    }
+    return koinContractId!;
   }
 
-  static KoinContractId(): Uint8Array {
-    return Base58.decode('19JntSm8pSNETT9aHTwAUHC5RMoaSmgZPJ');
+  export function VhpContractId(): Uint8Array {
+    if (vhpContractId == null) {
+      vhpContractId = Base58.decode('1JZqj7dDrK5LzvdJgufYBJNUFo88xBoWC8');
+    }
+    return vhpContractId!;
   }
 
-  static VhpContractId(): Uint8Array {
-    return Base58.decode('1JZqj7dDrK5LzvdJgufYBJNUFo88xBoWC8');
+  export function PobContractId(): Uint8Array {
+    if (pobContractId == null) {
+      pobContractId = Base58.decode('198RuEouhgiiaQm7uGfaXS6jqZr6g6nyoR');
+    }
+    return pobContractId!;
   }
 
-  static PobContractId(): Uint8Array {
-    return Base58.decode('198RuEouhgiiaQm7uGfaXS6jqZr6g6nyoR');
-  }
-
-  static PobBurnEntryPoint(): u32 {
-    return 0x859facc5;
+  export function OperatorWallet(): Uint8Array {
+    if (operatorWallet == null) {
+      operatorWallet = Base58.decode('1DfotF65NdVdLfNzrrhexzS7oFmJuXvLsT');
+    }
+    return operatorWallet!;
   }
 }

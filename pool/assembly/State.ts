@@ -2,27 +2,30 @@ import { System, chain } from "@koinos/sdk-as";
 import { Constants } from './Constants';
 import { pool } from "./proto/pool";
 
-const BASIS_SPACE_ID = 0;
-const BASIS_KEY = new Uint8Array(0);
+export namespace State {
+  const BASIS_SPACE_ID = 0;
+  const BASIS_KEY = new Uint8Array(0);
 
-export class State {
-  basisSpace: chain.object_space;
+  let basisSpace: chain.object_space | null = null;
 
-  constructor() {
-    this.basisSpace = new chain.object_space(false, Constants.ContractId(), BASIS_SPACE_ID);
+  function BasisSpace(): chain.object_space {
+    if (basisSpace == null) {
+      basisSpace = new chain.object_space(false, Constants.ContractId(), BASIS_SPACE_ID);
+    }
+    return basisSpace!;
   }
 
-  GetBasis(): pool.basis_object {
-    const basis = System.getObject<Uint8Array, pool.basis_object>(this.basisSpace, BASIS_KEY, pool.basis_object.decode);
+  export function GetBasis(): u64 {
+    const basis = System.getObject<Uint8Array, pool.basis_object>(BasisSpace(), BASIS_KEY, pool.basis_object.decode);
 
     if (basis) {
-      return basis;
+      return basis.value;
     }
 
-    return new pool.basis_object();
+    return 0;
   }
 
-  SaveBasis(basis: pool.basis_object): void {
-    System.putObject(this.basisSpace, BASIS_KEY, basis, pool.basis_object.encode);
+  export function SaveBasis(basis: u64): void {
+    System.putObject(BasisSpace(), BASIS_KEY, new pool.basis_object(basis), pool.basis_object.encode);
   }
 }

@@ -6,6 +6,6 @@ export class Constants {
   }
   
   static PoolContractId(): Uint8Array {
-    return Base58.decode('1Bi37wfbkiJ8Fp7KUrTnDVWT7swTcZYMgi');
+    return Base58.decode('1BceRYw28bfB893L2J3ZYsSuT29WamVrT6');
   }
 }
