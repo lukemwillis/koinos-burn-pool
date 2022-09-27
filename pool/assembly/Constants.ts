@@ -21,7 +21,7 @@ export namespace Constants {
 
   export function PoolTokenContractId(): Uint8Array {
     if (poolTokenContractId == null) {
-      poolTokenContractId = Base58.decode('1LeuEQVZkiJjpKdrhu9v1qFvkk2yi8RdFM');
+      poolTokenContractId = Base58.decode('1JMeuhdS8gKy4dU4ibaZ1ru3HQFPqdroe3');
     }
     return poolTokenContractId!;
   }

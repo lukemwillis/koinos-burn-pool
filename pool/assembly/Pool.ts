@@ -64,11 +64,11 @@ export class Pool {
   }
 
   deposit_helper(account: Uint8Array, value: u64): void {
-    this.allocate_profit();
+    this.allocate_profit(value);
 
     const supply = Tokens.Pool().totalSupply();
     const basis = State.GetBasis();
-    const totalStakedBeforeDeposit = SafeMath.sub(Tokens.virtualBalanceOf(Constants.ContractId()), value);
+    const totalStakedBeforeDeposit = Tokens.virtualBalanceOf(Constants.ContractId()) - value;
 
     // value * supply / totalStaked = how much internal balance to track for your address
     // since value is in KOIN/VHP, we have to scale it based on the ratio of all internal balances to KOIN/VHP in the contract
@@ -117,7 +117,6 @@ export class Pool {
   withdraw_vhp(args: pool.withdraw_vhp_arguments): pool.withdraw_vhp_result {
     const scaledValue = this.withdraw_helper(args.account!, args.value);
 
-    // TODO this call fails due to an authority issue in the VHP contract
     System.require(
       Tokens.Vhp().transfer(Constants.ContractId(), args.account!, scaledValue),
       "Contract had insufficient funds for withdrawal. Try withdrawing KOIN instead."
@@ -155,7 +154,6 @@ export class Pool {
     State.SaveBasis(SafeMath.sub(basis, scaledValue));
 
     return scaledValue;
-    return 0;
   }
 
   reburn(_: pool.reburn_arguments): pool.reburn_result {
@@ -179,7 +177,7 @@ export class Pool {
     // this will fail for any address other than the contract address
     // this is because koin.burn is not authorized for other addresses
     // TODO since the caller is the contract and not the other address, this should be allowed
-    // potentially an authority issue with KOIN contract
+    // potentially an authority issue with KOIN contract or the way POB passes through to KOIN
     const callRes = System.call(
       Constants.PobContractId(),
       Constants.POB_BURN_ENTRY_POINT,
@@ -199,18 +197,18 @@ export class Pool {
     return new pool.reburn_result(true);
   }
 
-  allocate_profit(): void {
+  allocate_profit(depositAmount: u64 = 0): void {
     const basis = State.GetBasis();
-    const totalStaked = Tokens.virtualBalanceOf(Constants.ContractId());
+    const totalStakedBeforeDeposit = Tokens.virtualBalanceOf(Constants.ContractId()) - depositAmount;
 
-    if (basis >= totalStaked) {
+    if (basis >= totalStakedBeforeDeposit) {
       return;
     }
 
     // totalStaked - basis / operatorFee = profit since last reburn / 20
     // operator takes 5% of profits
     const operatorShareOfProfit = SafeMath.div(
-      SafeMath.sub(totalStaked, basis),
+      SafeMath.sub(totalStakedBeforeDeposit, basis),
       Constants.OPERATOR_FEE
     );
 
@@ -225,6 +223,6 @@ export class Pool {
 
     // reset basis to totalStaked - operatorShare
     // this ensures we don't take operator fee more than once on any given profit
-    State.SaveBasis(SafeMath.sub(totalStaked, operatorShareOfProfit));
+    State.SaveBasis(totalStakedBeforeDeposit - operatorShareOfProfit);
   }
 }
