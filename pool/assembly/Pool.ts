@@ -1,4 +1,4 @@
-import { pob, Protobuf, SafeMath, System } from "@koinos/sdk-as";
+import { authority, pob, Protobuf, SafeMath, System } from "@koinos/sdk-as";
 import { u128 } from "as-bignum";
 import { pool } from "./proto/pool";
 import { State } from "./State";
@@ -12,15 +12,30 @@ export class Pool {
     if (balance == 0) return new pool.balance_of_result(0);
 
     const supply = Tokens.Pool().totalSupply();
-    const basis = State.GetBasis(); // total KOIN/VHP held by contract not including recent profit
+    const totalStaked = Tokens.virtualBalanceOf(Constants.ContractId());
 
-    // balance * basis / supply = your share of the KOIN/VHP held by contract
+    // balance * staked / supply = your share of the KOIN/VHP held by contract
     // @ts-ignore allowed in AS
-    return new pool.balance_of_result((u128.fromU64(balance) * u128.fromU64(basis || 1) / u128.fromU64(supply || 1)).toU64());
+    return new pool.balance_of_result((u128.fromU64(balance) * u128.fromU64(totalStaked || 1) / u128.fromU64(supply || 1)).toU64());
   }
 
   basis(_: pool.basis_arguments): pool.basis_result {
     return new pool.basis_result(State.GetBasis());
+  }
+
+  get_metadata(_: pool.get_metadata_arguments): pool.get_metadata_result {
+    return new pool.get_metadata_result(State.GetMetadata());
+  }
+
+  set_metadata(args: pool.set_metadata_arguments): pool.set_metadata_result {
+    System.requireAuthority(
+      authority.authorization_type.contract_call,
+      Constants.ContractId()
+    );
+
+    State.SaveMetadata(args.metadata!);
+
+    return new pool.set_metadata_result(true);
   }
 
   deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {
@@ -68,7 +83,8 @@ export class Pool {
 
     const supply = Tokens.Pool().totalSupply();
     const basis = State.GetBasis();
-    const totalStakedBeforeDeposit = Tokens.virtualBalanceOf(Constants.ContractId()) - value;
+    const totalStakedBeforeDeposit =
+      Tokens.virtualBalanceOf(Constants.ContractId()) - value;
 
     // value * supply / totalStaked = how much internal balance to track for your address
     // since value is in KOIN/VHP, we have to scale it based on the ratio of all internal balances to KOIN/VHP in the contract
@@ -88,17 +104,23 @@ export class Pool {
   withdraw_koin(args: pool.withdraw_koin_arguments): pool.withdraw_koin_result {
     // availableMana represents how much liquid KOIN is in the contract.
     const availableMana = System.getAccountRC(Constants.ContractId());
+    const koinBuffer = State.GetMetadata().koin_buffer;
+
     System.require(
       // availableMana - value = contract's liquid koin balance after withdrawal
       // we keep a buffer of KOIN to ensure we can always pay mana for creating blocks
-      availableMana - args.value >= Constants.KOIN_BUFFER,
+      availableMana - args.value >= koinBuffer,
       "Contract had insufficient funds for withdrawal. Try withdrawing VHP instead."
     );
 
     const scaledValue = this.withdraw_helper(args.account!, args.value);
 
     System.require(
-      Tokens.Koin().transfer(Constants.ContractId(), args.account!, scaledValue),
+      Tokens.Koin().transfer(
+        Constants.ContractId(),
+        args.account!,
+        scaledValue
+      ),
       "Failed to transfer KOIN"
     );
 
@@ -160,13 +182,15 @@ export class Pool {
     this.allocate_profit();
 
     const availableMana = System.getAccountRC(Constants.ContractId());
+    const metadata = State.GetMetadata();
+
     System.require(
       // don't go below koin buffer to ensure we always have enough to pay mana for block production
-      availableMana > Constants.KOIN_BUFFER,
+      availableMana > metadata.koin_buffer,
       "Not enough liquid KOIN in contract to burn"
     );
 
-    const koinToBurn = availableMana - Constants.KOIN_BUFFER;
+    const koinToBurn = availableMana - metadata.koin_buffer;
     const pobArgs = new pob.burn_arguments(
       koinToBurn,
       Constants.ContractId(),
@@ -199,7 +223,9 @@ export class Pool {
 
   allocate_profit(depositAmount: u64 = 0): void {
     const basis = State.GetBasis();
-    const totalStakedBeforeDeposit = Tokens.virtualBalanceOf(Constants.ContractId()) - depositAmount;
+    const totalStakedBeforeDeposit =
+      Tokens.virtualBalanceOf(Constants.ContractId()) - depositAmount;
+    const metadata = State.GetMetadata();
 
     if (basis >= totalStakedBeforeDeposit) {
       return;
@@ -209,13 +235,13 @@ export class Pool {
     // operator takes 5% of profits
     const operatorShareOfProfit = SafeMath.div(
       SafeMath.sub(totalStakedBeforeDeposit, basis),
-      Constants.OPERATOR_FEE
+      metadata.operator_fee
     );
 
     System.require(
       Tokens.Koin().transfer(
         Constants.ContractId(),
-        Constants.OperatorWallet(),
+        metadata.operator_wallet!,
         operatorShareOfProfit
       ),
       "Failed to transfer operator share of profit"

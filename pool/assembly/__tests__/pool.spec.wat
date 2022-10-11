@@ -1,7 +1,7 @@
 (module
  (type $i32_i32_=>_none (func (param i32 i32)))
- (type $i32_i32_=>_i32 (func (param i32 i32) (result i32)))
  (type $none_=>_none (func))
+ (type $i32_i32_=>_i32 (func (param i32 i32) (result i32)))
  (type $i32_=>_none (func (param i32)))
  (type $i32_=>_i32 (func (param i32) (result i32)))
  (type $i32_i32_i32_=>_none (func (param i32 i32 i32)))
@@ -125,6 +125,7 @@
  (global $~lib/@koinos/sdk-as/systemCalls/System.RETURN_BYTES (mut i32) (i32.const 0))
  (global $assembly/Constants/Constants.contractId (mut i32) (i32.const 0))
  (global $assembly/State/State.BASIS_KEY (mut i32) (i32.const 0))
+ (global $assembly/State/State.METADATA_KEY (mut i32) (i32.const 0))
  (global $assembly/State/State.basisSpace (mut i32) (i32.const 0))
  (global $~lib/@koinos/sdk-as/util/base58/Base58.BASE_MAP (mut i32) (i32.const 0))
  (global $assembly/__tests__/pool.spec/TEST_CONTRACT_ID (mut i32) (i32.const 0))
@@ -664,6 +665,12 @@
   i32.const 1872
   call $byn-split-outlined-A$~lib/rt/itcms/__visit
   global.get $assembly/State/State.BASIS_KEY
+  local.tee $0
+  if
+   local.get $0
+   call $byn-split-outlined-A$~lib/rt/itcms/__visit
+  end
+  global.get $assembly/State/State.METADATA_KEY
   local.tee $0
   if
    local.get $0
@@ -5617,20 +5624,20 @@
   (local $2 i32)
   (local $3 i64)
   (local $4 i32)
-  i32.const 1087120125
+  i32.const -990416443
   call $~lib/index/__cover
-  i32.const 1443598445
+  i32.const -1999900363
   call $~lib/index/__cover
   local.get $1
   i32.const 0
   i32.lt_s
   if (result i32)
-   i32.const -844116401
+   i32.const 2037688967
    call $~lib/index/__cover
    local.get $0
    i32.load offset=4
   else
-   i32.const -1268062600
+   i32.const 1613742768
    call $~lib/index/__cover
    local.get $1
    local.get $0
@@ -5655,9 +5662,9 @@
   call $~onstore
   i64.const 0
   i64.store
-  i32.const -499463491
+  i32.const 1717967237
   call $~lib/index/__cover
-  i32.const 1098211281
+  i32.const 1949679769
   call $~lib/index/__cover
   local.get $1
   i32.const 0
@@ -5672,7 +5679,7 @@
    i32.load
    i32.gt_u
    if
-    i32.const -1495448692
+    i32.const -643980204
     call $~lib/index/__cover
     block $__inlined_func$~lib/as-proto/Reader/Reader#uint32@virtual
      local.get $0
@@ -5696,7 +5703,7 @@
      i32.const 1
      i32.eq
      if
-      i32.const -1781475332
+      i32.const -934632711
       call $~lib/index/__cover
       block $__inlined_func$~lib/as-proto/Reader/Reader#uint64@virtual
        local.get $0
@@ -5722,7 +5729,7 @@
       i64.store
       br $break|1
      end
-     i32.const -2010875654
+     i32.const -1164033033
      call $~lib/index/__cover
      local.get $0
      local.get $2
@@ -5838,9 +5845,9 @@
     call $~onstore
     i32.const 0
     i32.store offset=8
-    i32.const -1222663
+    i32.const -1232223907
     call $~lib/index/__cover
-    i32.const 1645841485
+    i32.const -1211302223
     call $~lib/index/__cover
     global.get $~lib/memory/__stack_pointer
     i32.const 8
@@ -5857,14 +5864,14 @@
     call $~onstore
     i64.const 0
     i64.store
-    i32.const 1380269472
+    i32.const -438932099
     call $~lib/index/__cover
-    i32.const -784428589
+    i32.const -2010901264
     call $~lib/index/__cover
     global.get $assembly/State/State.basisSpace
     i32.eqz
     if
-     i32.const 1919163384
+     i32.const 692690709
      call $~lib/index/__cover
      global.get $~lib/memory/__stack_pointer
      i32.const 4
@@ -5881,14 +5888,14 @@
      call $~onstore
      i32.const 0
      i32.store
-     i32.const -1062284642
+     i32.const 756916929
      call $~lib/index/__cover
-     i32.const -1648660400
+     i32.const -422187725
      call $~lib/index/__cover
      global.get $assembly/Constants/Constants.contractId
      i32.eqz
      if
-      i32.const -1886726026
+      i32.const -660253351
       call $~lib/index/__cover
       global.get $~lib/memory/__stack_pointer
       i32.const 24
@@ -6072,7 +6079,7 @@
      if
       i32.const 3632
       i32.const 2096
-      i32.const 19
+      i32.const 16
       i32.const 12
       call $~lib/wasi/index/abort
       unreachable
@@ -6106,7 +6113,7 @@
     if
      i32.const 3632
      i32.const 2032
-     i32.const 15
+     i32.const 22
      i32.const 12
      call $~lib/wasi/index/abort
      unreachable
@@ -6187,7 +6194,7 @@
     end
     local.get $0
     if
-     i32.const -523518216
+     i32.const -720991528
      call $~lib/index/__cover
      local.get $0
      i64.load
@@ -9324,8 +9331,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1988355471
-  i32.const 136
+  i32.const 1897787600
+  i32.const 137
   i32.const 74
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9337,34 +9344,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 420251343
-  i32.const 138
-  i32.const 41
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -622171562
-  i32.const 143
-  i32.const 31
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -682909152
-  i32.const 136
+  i32.const 1574001855
+  i32.const 137
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -9376,8 +9357,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1415129331
-  i32.const 149
+  i32.const -1626480244
+  i32.const 139
   i32.const 72
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9389,8 +9370,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -755211389
-  i32.const 150
+  i32.const -786231196
+  i32.const 140
   i32.const 39
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -9402,8 +9383,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1179157588
-  i32.const 150
+  i32.const -1210177395
+  i32.const 140
   i32.const 52
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -9415,8 +9396,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 942489048
-  i32.const 153
+  i32.const 731138135
+  i32.const 143
   i32.const 32
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9428,8 +9409,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 651836541
-  i32.const 155
+  i32.const 440485628
+  i32.const 145
   i32.const 28
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9441,34 +9422,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 422436219
-  i32.const 158
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1208234814
-  i32.const 162
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1257346242
-  i32.const 149
+  i32.const 1792856573
+  i32.const 139
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -9480,9 +9435,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 972392026
-  i32.const 176
-  i32.const 68
+  i32.const -1292748705
+  i32.const 155
+  i32.const 19
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -9493,8 +9448,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1181476
-  i32.const 176
+  i32.const -450291197
+  i32.const 155
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -9506,8 +9461,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 121085749
-  i32.const 184
+  i32.const 1737879181
+  i32.const 159
   i32.const 71
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9519,9 +9474,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 523855132
-  i32.const 185
-  i32.const 35
+  i32.const 974416058
+  i32.const 161
+  i32.const 42
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -9532,8 +9487,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1027091239
-  i32.const 184
+  i32.const -12581761
+  i32.const 159
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -9545,8 +9500,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 497557378
-  i32.const 191
+  i32.const 887878135
+  i32.const 169
   i32.const 69
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9558,8 +9513,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -490583551
-  i32.const 192
+  i32.const -693171775
+  i32.const 170
   i32.const 39
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -9571,8 +9526,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -914529750
-  i32.const 192
+  i32.const -1117117974
+  i32.const 170
   i32.const 52
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -9584,8 +9539,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 970244250
-  i32.const 195
+  i32.const 1365190874
+  i32.const 173
   i32.const 32
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9597,8 +9552,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 679591743
-  i32.const 197
+  i32.const 1074538367
+  i32.const 175
   i32.const 28
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -9610,9 +9565,35 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 598219165
-  i32.const 200
+  i32.const 845138045
+  i32.const 178
   i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1232182720
+  i32.const 169
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 141320034
+  i32.const 191
+  i32.const 58
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -9636,710 +9617,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1883919993
-  i32.const 213
-  i32.const 38
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1420243296
-  i32.const 213
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1561038634
-  i32.const 219
-  i32.const 73
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1032613716
-  i32.const 221
-  i32.const 41
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -14435056
-  i32.const 226
-  i32.const 31
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -763679142
-  i32.const 219
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 2138890641
-  i32.const 232
-  i32.const 71
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1792297719
-  i32.const 233
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 2078723378
-  i32.const 233
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1550225554
-  i32.const 236
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1259573047
-  i32.const 238
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1034798592
-  i32.const 241
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -600498308
-  i32.const 245
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1187625341
-  i32.const 232
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1580128532
-  i32.const 259
-  i32.const 68
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -79588514
-  i32.const 259
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -624487442
-  i32.const 267
-  i32.const 70
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1131591638
-  i32.const 268
-  i32.const 35
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 946321249
-  i32.const 267
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -248015813
-  i32.const 274
-  i32.const 68
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1527669881
-  i32.const 275
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1951616080
-  i32.const 275
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1577980756
-  i32.const 278
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1291954116
-  i32.const 280
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1062553794
-  i32.const 283
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -284679995
-  i32.const 274
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1946712674
-  i32.const 296
-  i32.const 38
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1871263611
-  i32.const 296
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 585053105
-  i32.const 302
-  i32.const 75
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1640350222
-  i32.const 304
-  i32.const 41
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 593301450
-  i32.const 309
-  i32.const 31
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -693958241
-  i32.const 302
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1158279245
-  i32.const 315
-  i32.const 73
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1465583247
-  i32.const 316
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1041637048
-  i32.const 316
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -2137005236
-  i32.const 319
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1871935420
-  i32.const 321
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1642535098
-  i32.const 324
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 7238198
-  i32.const 328
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1268395331
-  i32.const 315
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -2102476391
-  i32.const 342
-  i32.const 68
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -9867613
-  i32.const 342
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1600472971
-  i32.const 350
-  i32.const 72
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1743954011
-  i32.const 351
-  i32.const 35
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1016042150
-  i32.const 350
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1421072652
-  i32.const 357
-  i32.const 70
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1730211085
-  i32.const 358
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1306264886
-  i32.const 358
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -2104624167
-  i32.const 361
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1899690622
-  i32.const 363
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1670290300
-  i32.const 366
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -365449985
-  i32.const 357
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1338976168
-  i32.const 379
-  i32.const 38
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1952033601
-  i32.const 379
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -303921963
-  i32.const 385
+  i32.const -1129074218
+  i32.const 197
   i32.const 74
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10351,9 +9630,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 2104684851
-  i32.const 387
-  i32.const 41
+  i32.const -1662125003
+  i32.const 199
+  i32.const 42
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10364,21 +9643,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1062261946
-  i32.const 392
-  i32.const 31
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1144978556
-  i32.const 385
+  i32.const 452654149
+  i32.const 197
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10390,8 +9656,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 269304177
-  i32.const 398
+  i32.const 814026474
+  i32.const 207
   i32.const 72
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10403,8 +9669,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -222919030
-  i32.const 399
+  i32.const 613498033
+  i32.const 208
   i32.const 39
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -10416,8 +9682,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -646865229
-  i32.const 399
+  i32.const 189551834
+  i32.const 208
   i32.const 52
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -10429,8 +9695,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1524642863
-  i32.const 402
+  i32.const -1123322443
+  i32.const 211
   i32.const 32
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10442,8 +9708,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1815295370
-  i32.const 404
+  i32.const -1413974950
+  i32.const 213
   i32.const 28
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10455,8 +9721,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -2044695692
-  i32.const 407
+  i32.const -1643375272
+  i32.const 216
   i32.const 18
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10468,21 +9734,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 619600571
-  i32.const 411
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1719415646
-  i32.const 398
+  i32.const 2067668955
+  i32.const 207
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10494,9 +9747,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1494739885
-  i32.const 425
-  i32.const 68
+  i32.const 1943148146
+  i32.const 229
+  i32.const 58
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10507,8 +9760,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -90637603
-  i32.const 425
+  i32.const 481085339
+  i32.const 229
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10520,8 +9773,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1948921134
-  i32.const 433
+  i32.const 503593741
+  i32.const 236
   i32.const 71
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10533,8 +9786,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1943276779
-  i32.const 434
+  i32.const 906363124
+  i32.const 237
   i32.const 35
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10546,8 +9799,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 935272160
-  i32.const 433
+  i32.const -749915905
+  i32.const 236
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10559,8 +9812,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1969574533
-  i32.const 440
+  i32.const 880065370
+  i32.const 243
   i32.const 69
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10572,8 +9825,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 21401512
-  i32.const 441
+  i32.const 456480041
+  i32.const 244
   i32.const 39
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -10585,8 +9838,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -402544687
-  i32.const 441
+  i32.const 32533842
+  i32.const 244
   i32.const 52
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -10598,8 +9851,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1496887661
-  i32.const 444
+  i32.const 1352752242
+  i32.const 247
   i32.const 32
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10611,8 +9864,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1787540168
-  i32.const 446
+  i32.const 1062099735
+  i32.const 249
   i32.const 28
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10624,8 +9877,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -2016940490
-  i32.const 449
+  i32.const 837325280
+  i32.const 252
   i32.const 18
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10637,8 +9890,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -295729084
-  i32.const 440
+  i32.const -1980917149
+  i32.const 243
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10650,8 +9903,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -726613795
-  i32.const 462
+  i32.const 2123026108
+  i32.const 265
   i32.const 38
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10663,8 +9916,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1882312700
-  i32.const 462
+  i32.const 727466531
+  i32.const 265
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10676,9 +9929,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 2010334163
-  i32.const 469
-  i32.const 68
+  i32.const -1136886983
+  i32.const 271
+  i32.const 74
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10689,8 +9942,34 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1031162461
-  i32.const 469
+  i32.const 1271719831
+  i32.const 273
+  i32.const 41
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 224671059
+  i32.const 278
+  i32.const 31
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1534521576
+  i32.const 271
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10702,9 +9981,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1509307814
-  i32.const 471
-  i32.const 66
+  i32.const -563660843
+  i32.const 284
+  i32.const 72
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10715,8 +9994,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1962748410
-  i32.const 472
+  i32.const -1496650074
+  i32.const 285
   i32.const 39
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -10728,8 +10007,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1908272687
-  i32.const 472
+  i32.const -1920596273
+  i32.const 285
   i32.const 52
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -10741,8 +10020,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1271659147
-  i32.const 475
+  i32.const 1789331669
+  i32.const 288
   i32.const 32
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10754,8 +10033,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1562311654
-  i32.const 477
+  i32.const 1503305029
+  i32.const 290
   i32.const 28
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10767,8 +10046,34 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1400508070
-  i32.const 471
+  i32.const 1273904707
+  i32.const 293
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -361392193
+  i32.const 297
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 960084486
+  i32.const 284
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10780,9 +10085,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 999421309
-  i32.const 487
-  i32.const 19
+  i32.const 1967262391
+  i32.const 311
+  i32.const 68
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10793,8 +10098,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -993130591
-  i32.const 487
+  i32.const -1706104767
+  i32.const 311
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10806,9 +10111,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1446227386
-  i32.const 492
-  i32.const 65
+  i32.const 1111330247
+  i32.const 319
+  i32.const 71
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10819,9 +10124,776 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -266347076
-  i32.const 493
+  i32.const 1518725497
+  i32.const 320
   i32.const 35
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -830685895
+  i32.const 319
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1487801876
+  i32.const 326
+  i32.const 69
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -580606289
+  i32.const 327
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1004552488
+  i32.const 327
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1965114615
+  i32.const 330
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1674462108
+  i32.const 332
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1445061786
+  i32.const 335
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2061687139
+  i32.const 326
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1564204682
+  i32.const 348
+  i32.const 38
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 646696541
+  i32.const 348
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1882460174
+  i32.const 354
+  i32.const 73
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1879456337
+  i32.const 356
+  i32.const 41
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 837033432
+  i32.const 361
+  i32.const 31
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1453751586
+  i32.const 354
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1309234034
+  i32.const 367
+  i32.const 71
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1761230892
+  i32.const 368
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1337284693
+  i32.const 368
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1893273254
+  i32.const 371
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2111041535
+  i32.const 373
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1881641213
+  i32.const 376
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 250970180
+  i32.const 380
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 879314496
+  i32.const 367
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1863370276
+  i32.const 394
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2137842214
+  i32.const 394
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 370382923
+  i32.const 402
+  i32.const 70
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2126462003
+  i32.const 403
+  i32.const 35
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -760964994
+  i32.const 402
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 742228685
+  i32.const 409
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2005551434
+  i32.const 410
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1581605235
+  i32.const 410
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1722116175
+  i32.const 413
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2012768682
+  i32.const 415
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2052798292
+  i32.const 418
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2142457129
+  i32.const 409
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -951842309
+  i32.const 431
+  i32.const 38
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 716417442
+  i32.const 431
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1431895726
+  i32.const 437
+  i32.const 75
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1807774453
+  i32.const 439
+  i32.const 41
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1444769938
+  i32.const 444
+  i32.const 31
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1372981596
+  i32.const 437
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2009747733
+  i32.const 450
+  i32.const 73
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 52421319
+  i32.const 451
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -371524880
+  i32.const 451
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1285536748
+  i32.const 454
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1576189255
+  i32.const 456
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1805589577
+  i32.const 459
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 858706686
+  i32.const 463
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 949035397
+  i32.const 450
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1255633770
+  i32.const 477
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2057072224
+  i32.const 477
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -753630350
+  i32.const 485
+  i32.const 72
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1704170664
+  i32.const 486
+  i32.const 35
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1211985309
+  i32.const 485
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2022426156
+  i32.const 492
+  i32.const 70
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 317049157
+  i32.const 493
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -106897042
+  i32.const 493
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1257781546
+  i32.const 496
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1548434053
+  i32.const 498
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1629806631
+  i32.const 501
+  i32.const 18
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10845,99 +10917,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 172805713
-  i32.const 499
-  i32.const 63
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1358821652
-  i32.const 500
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1782767851
-  i32.const 500
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 323443919
-  i32.const 503
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 32791412
-  i32.const 505
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -196608910
-  i32.const 508
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 470488608
-  i32.const 499
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1093717785
-  i32.const 521
+  i32.const -344105803
+  i32.const 514
   i32.const 38
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10949,8 +10930,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -595353792
-  i32.const 521
+  i32.const 635647452
+  i32.const 514
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -10962,9 +10943,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1582573045
-  i32.const 528
-  i32.const 64
+  i32.const 690948402
+  i32.const 520
+  i32.const 74
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -10975,8 +10956,21 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1234857994
-  i32.const 529
+  i32.const -1195412080
+  i32.const 522
+  i32.const 41
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2052506444
+  i32.const 527
   i32.const 31
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -10988,8 +10982,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1976845927
-  i32.const 528
+  i32.const 1442702497
+  i32.const 520
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11001,9 +10995,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1443598445
-  i32.const 535
-  i32.const 62
+  i32.const 1264174542
+  i32.const 533
+  i32.const 72
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -11014,8 +11008,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -844116401
-  i32.const 536
+  i32.const -984665011
+  i32.const 534
   i32.const 39
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -11027,8 +11021,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1268062600
-  i32.const 536
+  i32.const -1408611210
+  i32.const 534
   i32.const 52
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -11040,21 +11034,21 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1495448692
+  i32.const -677800242
+  i32.const 537
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -968452749
   i32.const 539
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1781475332
-  i32.const 541
   i32.const 28
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11066,8 +11060,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -2010875654
-  i32.const 544
+  i32.const -1193227204
+  i32.const 542
   i32.const 18
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11079,8 +11073,21 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1087120125
-  i32.const 535
+  i32.const 1466443192
+  i32.const 546
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 868265407
+  i32.const 533
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11092,86 +11099,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1098211281
-  i32.const 557
-  i32.const 33
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -499463491
-  i32.const 557
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -808392113
-  i32.const 563
-  i32.const 70
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1576481103
-  i32.const 565
-  i32.const 41
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1676063288
-  i32.const 570
-  i32.const 31
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 307591554
-  i32.const 563
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1410101462
-  i32.const 576
+  i32.const -643271397
+  i32.const 560
   i32.const 68
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11183,86 +11112,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1497720780
-  i32.const 577
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1073774581
-  i32.const 577
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1054243398
-  i32.const 580
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1344895905
-  i32.const 582
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1574296227
-  i32.const 585
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1085374169
-  i32.const 589
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -266845536
-  i32.const 576
+  i32.const 2126793125
+  i32.const 560
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11274,216 +11125,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -880938543
-  i32.const 603
-  i32.const 68
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1361932507
-  i32.const 603
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1910194742
-  i32.const 610
-  i32.const 69
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 850148014
-  i32.const 612
-  i32.const 41
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -196900758
-  i32.const 617
-  i32.const 31
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 130931263
-  i32.const 610
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -1811546414
-  i32.const 623
-  i32.const 67
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -54070801
-  i32.const 624
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -478017000
-  i32.const 624
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1367759852
-  i32.const 627
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1077107345
-  i32.const 629
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 852332890
-  i32.const 632
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -782964010
-  i32.const 636
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -443505827
-  i32.const 623
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1402288697
-  i32.const 650
-  i32.const 68
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 815021891
-  i32.const 650
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 955180778
-  i32.const 657
+  i32.const -1499203541
+  i32.const 568
   i32.const 71
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11495,9 +11138,438 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1166217909
-  i32.const 659
-  i32.const 41
+  i32.const -1096434158
+  i32.const 569
+  i32.const 35
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1292755299
+  i32.const 568
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1122731912
+  i32.const 575
+  i32.const 69
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -720037173
+  i32.const 576
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1143983372
+  i32.const 576
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -650045040
+  i32.const 579
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -936071680
+  i32.const 581
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1165472002
+  i32.const 584
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1771210753
+  i32.const 575
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 120228826
+  i32.const 597
+  i32.const 38
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 184627137
+  i32.const 597
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1289762768
+  i32.const 604
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -676123782
+  i32.const 604
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -519063316
+  i32.const 606
+  i32.const 66
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2052771148
+  i32.const 607
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1818249949
+  i32.const 607
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -276788782
+  i32.const 610
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -567441289
+  i32.const 612
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -457269064
+  i32.const 606
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1994291674
+  i32.const 622
+  i32.const 19
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1594550462
+  i32.const 622
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1858495412
+  i32.const 627
+  i32.const 65
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 723897422
+  i32.const 628
+  i32.const 35
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -5796391
+  i32.const 627
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1167676078
+  i32.const 634
+  i32.const 63
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2100260337
+  i32.const 635
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1770760760
+  i32.const 635
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1170286540
+  i32.const 638
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 884259900
+  i32.const 640
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 654859578
+  i32.const 643
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1236797635
+  i32.const 634
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1940560406
+  i32.const 656
+  i32.const 38
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1471586045
+  i32.const 656
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -731104557
+  i32.const 663
+  i32.const 64
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -11521,8 +11593,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -566470244
-  i32.const 657
+  i32.const 240584801
+  i32.const 663
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11534,9 +11606,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1116667076
+  i32.const -1999900363
   i32.const 670
-  i32.const 69
+  i32.const 62
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -11612,19 +11684,6 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1500263230
-  i32.const 683
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
   i32.const -990416443
   i32.const 670
   i32.const 5
@@ -11638,9 +11697,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -614077226
-  i32.const 697
-  i32.const 68
+  i32.const 1949679769
+  i32.const 692
+  i32.const 33
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -11651,8 +11710,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 117620384
-  i32.const 697
+  i32.const 1717967237
+  i32.const 692
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11664,8 +11723,216 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 2028500198
-  i32.const 704
+  i32.const 1918756148
+  i32.const 698
+  i32.const 67
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1654932246
+  i32.const 700
+  i32.const 49
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -745426223
+  i32.const 705
+  i32.const 38
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 156736118
+  i32.const 710
+  i32.const 37
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1920435905
+  i32.const 698
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 595888907
+  i32.const 716
+  i32.const 65
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1060137324
+  i32.const 717
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1484083523
+  i32.const 717
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2103494158
+  i32.const 720
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1900820631
+  i32.const 722
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1671420309
+  i32.const 725
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 36123409
+  i32.const 729
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1594547624
+  i32.const 733
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 720488664
+  i32.const 716
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1750015495
+  i32.const 752
+  i32.const 7
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 378669529
+  i32.const 748
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 636935280
+  i32.const 760
   i32.const 70
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11677,8 +11944,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1260411208
-  i32.const 706
+  i32.const -131153710
+  i32.const 762
   i32.const 41
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11690,8 +11957,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 217988303
-  i32.const 711
+  i32.const -1178202482
+  i32.const 767
   i32.const 31
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11703,8 +11970,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -743130535
-  i32.const 704
+  i32.const 1992779619
+  i32.const 760
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11716,8 +11983,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -47973523
-  i32.const 717
+  i32.const -1439538441
+  i32.const 773
   i32.const 68
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11729,8 +11996,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1157620629
-  i32.const 718
+  i32.const 1062642251
+  i32.const 774
   i32.const 39
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -11742,8 +12009,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 733674430
-  i32.const 718
+  i32.const 638696052
+  i32.const 774
   i32.const 52
   i32.const 2
   call $~lib/index/__coverDeclare
@@ -11755,8 +12022,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1782648913
-  i32.const 721
+  i32.const 386458128
+  i32.const 777
   i32.const 32
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11768,8 +12035,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1491996406
-  i32.const 723
+  i32.const 95805621
+  i32.const 779
   i32.const 28
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11781,8 +12048,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1262596084
-  i32.const 726
+  i32.const -128968834
+  i32.const 782
   i32.const 18
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11794,8 +12061,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -368074949
-  i32.const 730
+  i32.const -1764265734
+  i32.const 786
   i32.const 18
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11807,8 +12074,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1317567625
-  i32.const 717
+  i32.const 1418342529
+  i32.const 773
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11820,8 +12087,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1812551891
-  i32.const 744
+  i32.const 564388850
+  i32.const 800
   i32.const 68
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11833,8 +12100,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -59039907
-  i32.const 744
+  i32.const -1247846724
+  i32.const 800
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -11846,9 +12113,9 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const 1723279762
-  i32.const 752
-  i32.const 64
+  i32.const -944071028
+  i32.const 807
+  i32.const 69
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -11859,125 +12126,8 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1812680807
-  i32.const 753
-  i32.const 39
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 966869856
-  i32.const 752
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 449858089
-  i32.const 759
-  i32.const 62
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 750525224
-  i32.const 760
-  i32.const 39
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 326579025
-  i32.const 760
-  i32.const 52
-  i32.const 2
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1810404115
-  i32.const 763
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1519751608
-  i32.const 765
-  i32.const 28
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 1290351286
-  i32.const 768
-  i32.const 18
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const -414622279
-  i32.const 759
-  i32.const 5
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 1968
-  i32.store
-  i32.const 1968
-  i32.const 700372341
-  i32.const 781
+  i32.const -2004117756
+  i32.const 809
   i32.const 41
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -11989,8 +12139,671 @@
   i32.const 1968
   i32.store
   i32.const 1968
-  i32.const -1850715004
-  i32.const 781
+  i32.const 1248426635
+  i32.const 814
+  i32.const 31
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1665628437
+  i32.const 807
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -366219021
+  i32.const 820
+  i32.const 67
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -489149330
+  i32.const 821
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -913095529
+  i32.const 821
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1481880051
+  i32.const 824
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1772532558
+  i32.const 826
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2001932880
+  i32.const 829
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 662363383
+  i32.const 833
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1241682238
+  i32.const 820
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1451977073
+  i32.const 847
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1945248231
+  i32.const 847
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1894459125
+  i32.const 854
+  i32.const 71
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 279109484
+  i32.const 856
+  i32.const 41
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -763313421
+  i32.const 861
+  i32.const 31
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1118717821
+  i32.const 854
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 324034450
+  i32.const 867
+  i32.const 69
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -2020633615
+  i32.const 868
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1850387482
+  i32.const 868
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 801347189
+  i32.const 871
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 510694682
+  i32.const 873
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 281294360
+  i32.const 876
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1349376673
+  i32.const 880
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 544280731
+  i32.const 867
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 831250167
+  i32.const 894
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1802808449
+  i32.const 894
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -821139705
+  i32.const 901
+  i32.const 70
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1589228695
+  i32.const 903
+  i32.const 41
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1658689829
+  i32.const 908
+  i32.const 31
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 942057530
+  i32.const 901
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1397353870
+  i32.const 914
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 722542100
+  i32.const 915
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 298595901
+  i32.const 915
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1071616857
+  i32.const 918
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1357643497
+  i32.const 920
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1587043819
+  i32.const 923
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1072626577
+  i32.const 927
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 367620440
+  i32.const 914
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1037088012
+  i32.const 941
+  i32.const 68
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1626148158
+  i32.const 941
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1130986008
+  i32.const 949
+  i32.const 64
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -367353414
+  i32.const 950
+  i32.const 39
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1793400266
+  i32.const 949
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1895185482
+  i32.const 956
+  i32.const 62
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 987169938
+  i32.const 957
+  i32.const 39
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 563223739
+  i32.const 957
+  i32.const 52
+  i32.const 2
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1039235788
+  i32.const 960
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1329888295
+  i32.const 962
+  i32.const 28
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -1559288617
+  i32.const 965
+  i32.const 18
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 1270565786
+  i32.const 956
+  i32.const 5
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const 2141073867
+  i32.const 978
+  i32.const 41
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 1968
+  i32.store
+  i32.const 1968
+  i32.const -316017830
+  i32.const 978
   i32.const 5
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -12030,8 +12843,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const -1648660400
-  i32.const 15
+  i32.const -422187725
+  i32.const 12
   i32.const 44
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12043,8 +12856,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const -1886726026
-  i32.const 16
+  i32.const -660253351
+  i32.const 13
   i32.const 29
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12056,8 +12869,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const -1062284642
-  i32.const 15
+  i32.const 756916929
+  i32.const 12
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -12069,8 +12882,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const 1733748434
-  i32.const 22
+  i32.const -1339372054
+  i32.const 19
   i32.const 53
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12082,8 +12895,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const 1495682808
-  i32.const 23
+  i32.const -1572811813
+  i32.const 20
   i32.const 38
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12095,8 +12908,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const 2001681410
-  i32.const 22
+  i32.const -624575206
+  i32.const 19
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -12108,8 +12921,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const -1954334895
-  i32.const 29
+  i32.const -727862220
+  i32.const 26
   i32.const 48
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12121,8 +12934,8 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const 461925207
-  i32.const 30
+  i32.const 1683772015
+  i32.const 27
   i32.const 33
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12134,8 +12947,153 @@
   i32.const 2096
   i32.store
   i32.const 2096
-  i32.const 620189275
+  i32.const -1855576450
+  i32.const 26
+  i32.const 3
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2096
+  i32.store
+  i32.const 2096
+  i32.const -1052172554
+  i32.const 34
+  i32.const 47
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2096
+  i32.store
+  i32.const 2096
+  i32.const 1359461681
+  i32.const 35
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2096
+  i32.store
+  i32.const 2096
+  i32.const -829666687
+  i32.const 34
+  i32.const 3
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2096
+  i32.store
+  i32.const 2096
+  i32.const -23173191
+  i32.const 42
+  i32.const 47
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2096
+  i32.store
+  i32.const 2096
+  i32.const -1906506252
+  i32.const 43
+  i32.const 32
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2096
+  i32.store
+  i32.const 2096
+  i32.const 196243076
+  i32.const 42
+  i32.const 3
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+ )
+ (func $start:assembly/State
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  i32.const 7884
+  i32.lt_s
+  if
+   i32.const 24288
+   i32.const 24336
+   i32.const 1
+   i32.const 1
+   call $~lib/wasi/index/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const -2010901264
+  i32.const 14
+  i32.const 45
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const 692690709
+  i32.const 15
   i32.const 29
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const -438932099
+  i32.const 14
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -12144,11 +13102,50 @@
   i32.const 4
   i32.const 0
   call $~onstore
-  i32.const 2096
+  i32.const 2032
   i32.store
-  i32.const 2096
-  i32.const -1869821004
-  i32.const 36
+  i32.const 2032
+  i32.const -1211302223
+  i32.const 25
+  i32.const 35
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const -720991528
+  i32.const 32
+  i32.const 16
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const -1232223907
+  i32.const 25
+  i32.const 3
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const -925701169
+  i32.const 39
   i32.const 47
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12157,24 +13154,11 @@
   i32.const 4
   i32.const 0
   call $~onstore
-  i32.const 2096
+  i32.const 2032
   i32.store
-  i32.const 2096
-  i32.const 541813231
-  i32.const 37
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 2096
-  i32.store
-  i32.const 2096
-  i32.const -610811969
-  i32.const 36
+  i32.const 2032
+  i32.const 450250010
+  i32.const 39
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
@@ -12183,50 +13167,11 @@
   i32.const 4
   i32.const 0
   call $~onstore
-  i32.const 2096
+  i32.const 2032
   i32.store
-  i32.const 2096
-  i32.const -431997416
-  i32.const 43
-  i32.const 47
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 2096
-  i32.store
-  i32.const 2096
-  i32.const 1979636819
-  i32.const 44
-  i32.const 32
-  i32.const 1
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 2096
-  i32.store
-  i32.const 2096
-  i32.const -1841813213
-  i32.const 43
-  i32.const 3
-  i32.const 0
-  call $~lib/index/__coverDeclare
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 0
-  call $~onstore
-  i32.const 2096
-  i32.store
-  i32.const 2096
-  i32.const -1935831427
-  i32.const 50
+  i32.const 2032
+  i32.const 1047783666
+  i32.const 48
   i32.const 48
   i32.const 1
   call $~lib/index/__coverDeclare
@@ -12235,12 +13180,12 @@
   i32.const 4
   i32.const 0
   call $~onstore
-  i32.const 2096
+  i32.const 2032
   i32.store
-  i32.const 2096
-  i32.const 475802808
-  i32.const 51
-  i32.const 33
+  i32.const 2032
+  i32.const 2106108204
+  i32.const 49
+  i32.const 32
   i32.const 1
   call $~lib/index/__coverDeclare
   global.get $~lib/memory/__stack_pointer
@@ -12248,14 +13193,73 @@
   i32.const 4
   i32.const 0
   call $~onstore
-  i32.const 2096
+  i32.const 2032
   i32.store
-  i32.const 2096
-  i32.const 1222152839
-  i32.const 50
+  i32.const 2032
+  i32.const -561896516
+  i32.const 48
   i32.const 3
   i32.const 0
   call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const 88276206
+  i32.const 59
+  i32.const 55
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const -1355188324
+  i32.const 59
+  i32.const 3
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const 946516970
+  i32.const 67
+  i32.const 70
+  i32.const 1
+  call $~lib/index/__coverDeclare
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 4
+  i32.const 0
+  call $~onstore
+  i32.const 2032
+  i32.store
+  i32.const 2032
+  i32.const -329278561
+  i32.const 67
+  i32.const 3
+  i32.const 0
+  call $~lib/index/__coverDeclare
+  call $start:assembly/Constants
+  i32.const 0
+  call $~lib/typedarray/Uint8Array#constructor
+  global.set $assembly/State/State.BASIS_KEY
+  i32.const 0
+  call $~lib/typedarray/Uint8Array#constructor
+  global.set $assembly/State/State.METADATA_KEY
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add
@@ -12266,679 +13270,603 @@
   i32.const 4
   i32.sub
   global.set $~lib/memory/__stack_pointer
-  block $folding-inner1
-   block $folding-inner0
-    global.get $~lib/memory/__stack_pointer
-    i32.const 7884
-    i32.lt_s
-    br_if $folding-inner0
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 0
-    i32.store
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1760464066
-    i32.const 9
-    i32.const 71
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1969775014
-    i32.const 12
-    i32.const 23
-    i32.const 2
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1668629520
-    i32.const 19
-    i32.const 86
-    i32.const 2
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -413277404
-    i32.const 19
-    i32.const 114
-    i32.const 2
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -1614191250
-    i32.const 19
-    i32.const 77
-    i32.const 2
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -1658041885
-    i32.const 19
-    i32.const 104
-    i32.const 2
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1034304694
-    i32.const 9
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -298065763
-    i32.const 22
-    i32.const 53
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -656609523
-    i32.const 22
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1485731419
-    i32.const 26
-    i32.const 77
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -218900087
-    i32.const 26
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 2143471450
-    i32.const 46
-    i32.const 74
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -2024338421
-    i32.const 46
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 30312481
-    i32.const 66
-    i32.const 57
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 2069782124
-    i32.const 77
-    i32.const 71
-    i32.const 2
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -819801783
-    i32.const 77
-    i32.const 117
-    i32.const 2
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 465190541
-    i32.const 66
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 55882807
-    i32.const 88
-    i32.const 80
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -1121393075
-    i32.const 88
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1003387370
-    i32.const 117
-    i32.const 77
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 104936792
-    i32.const 117
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -874733394
-    i32.const 137
-    i32.const 57
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -1700501542
-    i32.const 137
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1671977581
-    i32.const 159
-    i32.const 56
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 1007882138
-    i32.const 159
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -1276348396
-    i32.const 200
-    i32.const 49
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const -1088259189
-    i32.const 204
-    i32.const 44
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 1904
-    i32.store
-    i32.const 1904
-    i32.const 174657693
-    i32.const 200
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    call $start:assembly/proto/pool
-    global.get $~lib/memory/__stack_pointer
-    i32.const 4
-    i32.sub
-    global.set $~lib/memory/__stack_pointer
-    global.get $~lib/memory/__stack_pointer
-    i32.const 7884
-    i32.lt_s
-    br_if $folding-inner0
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 0
-    i32.store
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const -784428589
-    i32.const 11
-    i32.const 45
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const 1919163384
-    i32.const 12
-    i32.const 29
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const 1380269472
-    i32.const 11
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const 1645841485
-    i32.const 18
-    i32.const 35
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const -523518216
-    i32.const 21
-    i32.const 16
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const -1222663
-    i32.const 18
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const -728227857
-    i32.const 28
-    i32.const 47
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2032
-    i32.store
-    i32.const 2032
-    i32.const 1243541818
-    i32.const 28
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    call $start:assembly/Constants
-    i32.const 0
-    call $~lib/typedarray/Uint8Array#constructor
-    global.set $assembly/State/State.BASIS_KEY
-    global.get $~lib/memory/__stack_pointer
-    i32.const 4
-    i32.add
-    global.set $~lib/memory/__stack_pointer
-    global.get $~lib/memory/__stack_pointer
-    i32.const 4
-    i32.sub
-    global.set $~lib/memory/__stack_pointer
-    global.get $~lib/memory/__stack_pointer
-    i32.const 7884
-    i32.lt_s
-    br_if $folding-inner1
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 0
-    i32.store
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const -56675642
-    i32.const 9
-    i32.const 33
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const 1418949955
-    i32.const 10
-    i32.const 23
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const -1426585676
-    i32.const 9
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const 910589851
-    i32.const 16
-    i32.const 32
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const 1498837979
-    i32.const 17
-    i32.const 22
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const -441854710
-    i32.const 16
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const -593244160
-    i32.const 23
-    i32.const 33
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const -4996032
-    i32.const 24
-    i32.const 23
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const -1672855954
-    i32.const 23
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const -1911599426
-    i32.const 30
-    i32.const 60
-    i32.const 1
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 0
-    i32.const 4
-    i32.const 0
-    call $~onstore
-    i32.const 2160
-    i32.store
-    i32.const 2160
-    i32.const 1391110098
-    i32.const 30
-    i32.const 3
-    i32.const 0
-    call $~lib/index/__coverDeclare
-    global.get $~lib/memory/__stack_pointer
-    i32.const 4
-    i32.add
-    global.set $~lib/memory/__stack_pointer
-    global.get $~lib/memory/__stack_pointer
-    i32.const 4
-    i32.add
-    global.set $~lib/memory/__stack_pointer
-    return
-   end
+  block $folding-inner0
+   global.get $~lib/memory/__stack_pointer
+   i32.const 7884
+   i32.lt_s
+   br_if $folding-inner0
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 0
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1760464066
+   i32.const 9
+   i32.const 71
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1969775014
+   i32.const 12
+   i32.const 23
+   i32.const 2
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -1819282731
+   i32.const 19
+   i32.const 92
+   i32.const 2
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 393777641
+   i32.const 19
+   i32.const 120
+   i32.const 2
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -1614191250
+   i32.const 19
+   i32.const 77
+   i32.const 2
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -850986840
+   i32.const 19
+   i32.const 110
+   i32.const 2
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1034304694
+   i32.const 9
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -298065763
+   i32.const 22
+   i32.const 53
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -656609523
+   i32.const 22
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1720769624
+   i32.const 26
+   i32.const 74
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -218900087
+   i32.const 26
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -144939614
+   i32.const 30
+   i32.const 77
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 369300240
+   i32.const 30
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -342412926
+   i32.const 41
+   i32.const 77
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -423991568
+   i32.const 41
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 315327105
+   i32.const 61
+   i32.const 74
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 2065537394
+   i32.const 61
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -1797831864
+   i32.const 81
+   i32.const 57
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1850724518
+   i32.const 93
+   i32.const 71
+   i32.const 2
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 979347023
+   i32.const 93
+   i32.const 117
+   i32.const 2
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 260099060
+   i32.const 81
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 138203492
+   i32.const 104
+   i32.const 80
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 679373882
+   i32.const 104
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 608440746
+   i32.const 139
+   i32.const 77
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -1481646824
+   i32.const 139
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -1269680018
+   i32.const 159
+   i32.const 57
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1007882138
+   i32.const 159
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1281656824
+   i32.const 181
+   i32.const 56
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -428210587
+   i32.const 181
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1806023826
+   i32.const 224
+   i32.const 49
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const 1181090450
+   i32.const 230
+   i32.const 44
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 1904
+   i32.store
+   i32.const 1904
+   i32.const -1193071205
+   i32.const 224
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   call $start:assembly/proto/pool
+   call $start:assembly/State
+   global.get $~lib/memory/__stack_pointer
+   i32.const 4
+   i32.sub
+   global.set $~lib/memory/__stack_pointer
+   global.get $~lib/memory/__stack_pointer
+   i32.const 7884
+   i32.lt_s
+   br_if $folding-inner0
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 0
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const -56675642
+   i32.const 9
+   i32.const 33
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const 1418949955
+   i32.const 10
+   i32.const 23
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const -1426585676
+   i32.const 9
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const 910589851
+   i32.const 16
+   i32.const 32
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const 1498837979
+   i32.const 17
+   i32.const 22
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const -441854710
+   i32.const 16
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const -593244160
+   i32.const 23
+   i32.const 33
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const -4996032
+   i32.const 24
+   i32.const 23
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const -1672855954
+   i32.const 23
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const -1911599426
+   i32.const 30
+   i32.const 60
+   i32.const 1
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 0
+   i32.const 4
+   i32.const 0
+   call $~onstore
+   i32.const 2160
+   i32.store
+   i32.const 2160
+   i32.const 1391110098
+   i32.const 30
+   i32.const 3
+   i32.const 0
+   call $~lib/index/__coverDeclare
+   global.get $~lib/memory/__stack_pointer
+   i32.const 4
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   global.get $~lib/memory/__stack_pointer
+   i32.const 4
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   return
   end
   i32.const 24288
   i32.const 24336

@@ -1,5 +1,5 @@
 import { Token } from "@koinos/sdk-as";
-import { Constants } from './Constants';
+import { Constants } from "./Constants";
 
 export namespace Tokens {
   let koin: Token | null = null;

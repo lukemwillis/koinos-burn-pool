@@ -27,6 +27,28 @@ message basis_result {
 }
 
 /*
+   @description Get internal metadata
+   @read-only true
+*/
+message get_metadata_arguments {}
+
+message get_metadata_result {
+   metadata_object metadata = 1;
+}
+
+/*
+   @description Update internal metadata. Restricted to contract owner.
+   @read-only false
+*/
+message set_metadata_arguments {
+   metadata_object metadata = 1;
+}
+
+message set_metadata_result {
+   bool value = 1;
+}
+
+/*
    @description Deposit KOIN
    @read-only false
 */
@@ -91,6 +113,12 @@ message reburn_result {
 // State objects
 message basis_object {
    uint64 value = 1 [jstype = JS_STRING];
+}
+
+message metadata_object {
+   bytes operator_wallet = 1 [(koinos.btype) = ADDRESS];
+   uint64 operator_fee = 2 [jstype = JS_STRING];
+   uint64 koin_buffer = 3 [jstype = JS_STRING];
 }
 
 // Events
