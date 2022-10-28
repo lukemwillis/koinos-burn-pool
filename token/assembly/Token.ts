@@ -12,7 +12,7 @@ import { Constants } from "./Constants";
 
 export class Token {
   _name: string = "Pooled VHP";
-  _symbol: string = "PVHP";
+  _symbol: string = "pVHP";
   _decimals: u32 = 8;
 
   _state: State;

@@ -25,7 +25,7 @@ describe("token", () => {
     const args = new token.symbol_arguments();
     const res = contract.symbol(args);
 
-    expect(res.value).toBe("PVHP");
+    expect(res.value).toBe("pVHP");
   });
 
   it("should get the decimals", () => {
