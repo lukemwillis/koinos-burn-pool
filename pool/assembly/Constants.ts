@@ -26,6 +26,7 @@ export namespace Constants {
   export function KoinContractId(): Uint8Array {
     if (koinContractId == null) {
       // TODO get current KOIN address
+      // koinContractId = System.getContractAddress('koin');
       koinContractId = Base58.decode('19JntSm8pSNETT9aHTwAUHC5RMoaSmgZPJ');
     }
     return koinContractId!;
@@ -34,6 +35,7 @@ export namespace Constants {
   export function VhpContractId(): Uint8Array {
     if (vhpContractId == null) {
       // TODO get current VHP address
+      // vhpContractId = System.getContractAddress('vhp');
       vhpContractId = Base58.decode('1JZqj7dDrK5LzvdJgufYBJNUFo88xBoWC8');
     }
     return vhpContractId!;
@@ -42,6 +44,7 @@ export namespace Constants {
   export function PobContractId(): Uint8Array {
     if (pobContractId == null) {
       // TODO get current POB address
+      // pobContractId = System.getContractAddress('pob');
       pobContractId = Base58.decode('198RuEouhgiiaQm7uGfaXS6jqZr6g6nyoR');
     }
     return pobContractId!;

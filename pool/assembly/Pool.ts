@@ -39,10 +39,18 @@ export class Pool {
   }
 
   deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {
-    System.require(
-      Tokens.Koin().transfer(args.account!, Constants.ContractId(), args.value),
-      "KOIN transfer from account failed. Please ensure you are authorized to transfer from this address and that your balance is sufficient."
+    const pobArgs = new pob.burn_arguments(
+      args.value,
+      args.account!,
+      Constants.ContractId()
     );
+
+    const callRes = System.call(
+      Constants.PobContractId(),
+      Constants.POB_BURN_ENTRY_POINT,
+      Protobuf.encode(pobArgs, pob.burn_arguments.encode)
+    );
+    System.require(callRes.code == 0, "Failed to burn KOIN for VHP. Please ensure you are authorized to transfer from this address and that your balance is sufficient.");
 
     this.deposit_helper(args.account!, args.value);
 

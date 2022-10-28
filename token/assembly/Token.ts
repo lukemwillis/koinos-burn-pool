@@ -44,7 +44,12 @@ export class Token {
   transfer(args: token.transfer_arguments): token.transfer_result {
     System.require(!Arrays.equal(args.from, args.to), "Cannot transfer to self");
 
-    System.requireAuthority(authority.authorization_type.contract_call, args.from!);
+    System.require(
+      Arrays.equal(System.getCaller().caller, args.from!) || 
+        System.checkAuthority(authority.authorization_type.contract_call, args.from!),
+      "'from' has not authorized transfer",
+      error.error_code.authorization_failure
+    );
 
     const fromBalance = this._state.GetBalance(args.from!);
 
@@ -77,7 +82,7 @@ export class Token {
   mint(args: token.mint_arguments): token.mint_result {
     // only the pool is allowed to mint
     System.require(
-      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()) || System.checkAuthority(authority.authorization_type.contract_call, Constants.ContractId()),
+      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()),
       "mint not authorized",
       error.error_code.authorization_failure
     );

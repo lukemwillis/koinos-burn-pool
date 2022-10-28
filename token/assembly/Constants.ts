@@ -1,11 +1,20 @@
 import { Base58, System } from '@koinos/sdk-as';
 
-export class Constants {
-  static ContractId(): Uint8Array {
-    return System.getContractId();
+export namespace Constants {
+  let contractId: Uint8Array | null = null;
+  let poolContractId: Uint8Array | null = null;
+
+  export function ContractId(): Uint8Array {
+    if (contractId == null) {
+      contractId = System.getContractId();
+    }
+    return contractId!;
   }
   
-  static PoolContractId(): Uint8Array {
-    return Base58.decode('1CUvzbueT7hpGStzNCUZEXwRsqeS6hpJkF');
+  export function PoolContractId(): Uint8Array {
+    if (poolContractId == null) {
+      poolContractId = Base58.decode('1CUvzbueT7hpGStzNCUZEXwRsqeS6hpJkF');
+    }
+    return poolContractId!;
   }
 }
