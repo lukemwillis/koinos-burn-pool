@@ -15,8 +15,15 @@ export class Pool {
     const totalStaked = Tokens.virtualBalanceOf(Constants.ContractId());
 
     // balance * staked / supply = your share of the KOIN/VHP held by contract
-    // @ts-ignore allowed in AS
-    return new pool.balance_of_result((u128.fromU64(balance) * u128.fromU64(totalStaked || 1) / u128.fromU64(supply || 1)).toU64());
+    return new pool.balance_of_result(
+      (
+        // @ts-ignore allowed in AS
+        (u128.fromU64(balance) * u128.fromU64(totalStaked || 1)) /
+        // @ts-ignore allowed in AS
+        u128.fromU64(supply || 1)
+      // @ts-ignore allowed in AS
+      ).toU64()
+    );
   }
 
   basis(_: pool.basis_arguments): pool.basis_result {
@@ -39,18 +46,43 @@ export class Pool {
   }
 
   deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {
-    const pobArgs = new pob.burn_arguments(
-      args.value,
-      args.account!,
-      Constants.ContractId()
-    );
+    const metadata = State.GetMetadata();
 
-    const callRes = System.call(
-      Constants.PobContractId(),
-      Constants.POB_BURN_ENTRY_POINT,
-      Protobuf.encode(pobArgs, pob.burn_arguments.encode)
-    );
-    System.require(callRes.code == 0, "Failed to burn KOIN for VHP. Please ensure you are authorized to transfer from this address and that your balance is sufficient.");
+    if (metadata.burn_deposits) {
+      const pobArgs = new pob.burn_arguments(
+        args.value,
+        args.account!,
+        Constants.ContractId()
+      );
+
+      const callRes = System.call(
+        Constants.PobContractId(),
+        Constants.POB_BURN_ENTRY_POINT,
+        Protobuf.encode(pobArgs, pob.burn_arguments.encode)
+      );
+      System.require(
+        callRes.code == 0,
+        "Failed to burn KOIN for VHP. Please ensure you are authorized to transfer from this address and that your balance is sufficient."
+      );
+    } else {
+      State.SaveMetadata(
+        new pool.metadata_object(
+          metadata.operator_wallet,
+          metadata.operator_fee,
+          metadata.koin_buffer + args.value,
+          metadata.burn_deposits
+        )
+      );
+
+      System.require(
+        Tokens.Koin().transfer(
+          args.account!,
+          Constants.ContractId(),
+          args.value
+        ),
+        "Failed to transfer KOIN"
+      );
+    }
 
     this.deposit_helper(args.account!, args.value);
 
@@ -97,8 +129,13 @@ export class Pool {
     // value * supply / totalStaked = how much internal balance to track for your address
     // since value is in KOIN/VHP, we have to scale it based on the ratio of all internal balances to KOIN/VHP in the contract
     // we use totalStaked instead of basis because your new deposit isn't entitled to existing profits
+    const scaledValue = (
+      // @ts-ignore allowed in AS
+      (u128.fromU64(value) * u128.fromU64(supply || 1)) /
+      // @ts-ignore allowed in AS
+      u128.fromU64(totalStakedBeforeDeposit || 1)
     // @ts-ignore allowed in AS
-    const scaledValue = (u128.fromU64(value) * u128.fromU64(supply || 1) / u128.fromU64(totalStakedBeforeDeposit || 1)).toU64();
+    ).toU64();
 
     System.require(
       Tokens.Pool().mint(account, scaledValue),
@@ -178,8 +215,13 @@ export class Pool {
     // value * basis / supply = your share of KOIN/VHP to redeem for ${value} PVHP
     // since value is in PVHP, we scale this number based on the ratio of all internal balances to KOIN/VHP held by contract
     // we use basis instead of totalStaked because profits aren't allocated to users until operator takes fee during reburn
+    const scaledValue = (
+      // @ts-ignore allowed in AS
+      (u128.fromU64(value) * u128.fromU64(basis)) /
+      // @ts-ignore allowed in AS
+      u128.fromU64(supply)
     // @ts-ignore allowed in AS
-    const scaledValue = (u128.fromU64(value) * u128.fromU64(basis) / u128.fromU64(supply)).toU64();
+    ).toU64();
 
     State.SaveBasis(SafeMath.sub(basis, scaledValue));
 

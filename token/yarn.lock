@@ -221,7 +221,7 @@
     chalk "4.1.2"
     commander "^9.0.0"
 
-"@koinos/sdk-as@^0.4.3":
+"@koinos/sdk-as@0.4.4":
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/@koinos/sdk-as/-/sdk-as-0.4.4.tgz#71b1a60a76a01da63c611c5c6834aefd0dbed8c2"
   integrity sha512-nLjjskme2b4ANG9ndiDlgrcRGo/BLOWSvJTTAmyunk6xBwhC8z9Sb1updpuyVXUwsGM7GrSFGPcufMyITLIktQ==

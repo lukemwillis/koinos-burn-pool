@@ -10,7 +10,7 @@
     "@koinos/as-gen": "^0.4.0",
     "@koinos/as-proto-gen": "^0.4.3",
     "@koinos/mock-vm": "https://github.com/roaminroe/koinos-mock-vm#fix-import",
-    "@koinos/sdk-as": "^0.4.3",
+    "@koinos/sdk-as": "0.4.4",
     "@koinos/sdk-as-cli": "^0.4.1",
     "@roaminroe/protoc": "^2.4.0",
     "@typescript-eslint/eslint-plugin": "^5.10.0",

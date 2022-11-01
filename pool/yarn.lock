@@ -189,7 +189,20 @@
     ts-poet "^4.9.0"
     typescript "^4.6.4"
 
-"@koinos/mock-vm@^0.4.1", "@koinos/mock-vm@https://github.com/roaminroe/koinos-mock-vm#fix-import":
+"@koinos/mock-vm@^0.4.1":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@koinos/mock-vm/-/mock-vm-0.4.4.tgz#1dbbea0b7835b7bc804ea4f91b98503ed13f3f59"
+  integrity sha512-Pdr0zXTIg7+S4zNU4raPffu+EjHTzp7PNLeISaA/IpEu8+mRHeYW2QKB37oL74oPsLm5yIKtpcpcK8GvKi3oig==
+  dependencies:
+    "@koinos/proto-js" "^0.4.0"
+    "@noble/hashes" "^1.0.0"
+    "@noble/secp256k1" "^1.5.5"
+    chalk "4.1.2"
+    multibase "^4.0.6"
+    protobufjs "^6.11.2"
+    somap "^0.5.14"
+
+"@koinos/mock-vm@https://github.com/roaminroe/koinos-mock-vm#fix-import":
   version "0.4.2"
   resolved "https://github.com/roaminroe/koinos-mock-vm#1d8a208b32e172fc69527b063de91829500e2d30"
   dependencies:
@@ -221,7 +234,7 @@
     chalk "4.1.2"
     commander "^9.0.0"
 
-"@koinos/sdk-as@^0.4.3":
+"@koinos/sdk-as@0.4.4":
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/@koinos/sdk-as/-/sdk-as-0.4.4.tgz#71b1a60a76a01da63c611c5c6834aefd0dbed8c2"
   integrity sha512-nLjjskme2b4ANG9ndiDlgrcRGo/BLOWSvJTTAmyunk6xBwhC8z9Sb1updpuyVXUwsGM7GrSFGPcufMyITLIktQ==

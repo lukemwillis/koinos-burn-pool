@@ -119,6 +119,7 @@ message metadata_object {
    bytes operator_wallet = 1 [(koinos.btype) = ADDRESS];
    uint64 operator_fee = 2 [jstype = JS_STRING];
    uint64 koin_buffer = 3 [jstype = JS_STRING];
+   bool burn_deposits = 4;
 }
 
 // Events

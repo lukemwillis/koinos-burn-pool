@@ -113,7 +113,7 @@ export class Token {
   burn(args: token.burn_arguments): token.burn_result {
     // only the pool is allowed to burn
     System.require(
-      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()) || System.checkAuthority(authority.authorization_type.contract_call, Constants.ContractId()),
+      Arrays.equal(System.getCaller().caller, Constants.PoolContractId()),
       "burn not authorized",
       error.error_code.authorization_failure
     );
