@@ -6,6 +6,32 @@ import { Constants } from "./Constants";
 import { Tokens } from "./Tokens";
 
 export class Pool {
+  initialize(args: pool.initialize_arguments): pool.initialize_result {
+    System.require(State.GetBasis() == 0, "Pool is already initialized");
+
+    System.require(
+      Tokens.Koin().transfer(
+        args.initial_depositor!,
+        Constants.ContractId(),
+        args.metadata!.koin_buffer
+      ),
+      "Failed to transfer KOIN"
+    );
+
+    System.require(
+      Tokens.Pool().mint(
+        args.initial_depositor!, 
+        args.metadata!.koin_buffer
+      ),
+      "Failed to mint PVHP"
+    );
+
+    State.SaveBasis(args.metadata!.koin_buffer);
+    State.SaveMetadata(args.metadata!);
+
+    return new pool.initialize_result(true);
+  }
+
   balance_of(args: pool.balance_of_arguments): pool.balance_of_result {
     // TODO balanceOf results in `module exited due to trap` when 0
     const balance = Tokens.Pool().balanceOf(args.account!); // not 1:1 with KOIN/VHP held by contract
@@ -37,12 +63,33 @@ export class Pool {
   set_metadata(args: pool.set_metadata_arguments): pool.set_metadata_result {
     System.requireAuthority(
       authority.authorization_type.contract_call,
-      Constants.ContractId()
+      Constants.AdminWalletId()
     );
 
     State.SaveMetadata(args.metadata!);
 
     return new pool.set_metadata_result(true);
+  }
+
+  set_block_producer_key(args: pool.set_block_producer_key_arguments): pool.set_block_producer_key_result {
+    System.requireAuthority(
+      authority.authorization_type.contract_call,
+      Constants.AdminWalletId()
+    );
+
+    const pobArgs = new pob.register_public_key_arguments(
+      Constants.ContractId(),
+      args.public_key
+    );
+
+    const callRes = System.call(
+      Constants.PobContractId(),
+      Constants.POB_REGISTER_PUBLIC_KEY_ENTRY_POINT,
+      Protobuf.encode(pobArgs, pob.register_public_key_arguments.encode)
+    );
+    System.require(callRes.code == 0, "Failed to set block producer");
+
+    return new pool.set_block_producer_key_result(true);
   }
 
   deposit_koin(args: pool.deposit_koin_arguments): pool.deposit_koin_result {

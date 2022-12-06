@@ -5,6 +5,19 @@ package pool;
 import "koinos/options.proto"; 
 
 /*
+   @description Update internal metadata. Restricted to contract owner.
+   @read-only false
+*/
+message initialize_arguments {
+   bytes initial_depositor = 1 [(koinos.btype) = ADDRESS];
+   metadata_object metadata = 2;
+}
+
+message initialize_result {
+   bool value = 1;
+}
+
+/*
    @description Get value of KOIN/VHP based on PVHP held by address
    @read-only true
 */
@@ -47,6 +60,19 @@ message set_metadata_arguments {
 message set_metadata_result {
    bool value = 1;
 }
+
+/*
+   @description Update public key registered with proof of burn.
+   @read-only false
+*/
+message set_block_producer_key_arguments {
+   bytes public_key = 1 [(koinos.btype) = BASE64];
+}
+
+message set_block_producer_key_result {
+   bool value = 1;
+}
+
 
 /*
    @description Deposit KOIN

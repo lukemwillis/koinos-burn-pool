@@ -1,4 +1,4 @@
-import { Base58, System } from '@koinos/sdk-as';
+import { Base58, System } from "@koinos/sdk-as";
 
 export namespace Constants {
   let contractId: Uint8Array | null = null;
@@ -10,10 +10,15 @@ export namespace Constants {
     }
     return contractId!;
   }
-  
+
   export function PoolContractId(): Uint8Array {
     if (poolContractId == null) {
-      poolContractId = Base58.decode('1CUvzbueT7hpGStzNCUZEXwRsqeS6hpJkF');
+      poolContractId = Base58.decode(
+        // mainnet
+        "1NsQbH5AhQXgtSNg1ejpFqTi2hmCWz1eQS"
+        // testnet
+        // "1F4ujgLt7pTywFi4TTrL3y1o25a197vbyj"
+      );
     }
     return poolContractId!;
   }
